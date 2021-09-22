@@ -1,11 +1,11 @@
 package test;
-import javax.swing.JOptionPane;
+import vistas.VistaPrincipal;
+
 public class Main {
     public static void main(String args[]){
-        System.out.println("Hola Mundo");
-        System.out.println("Hola Mundo");
-        System.out.println("Hola Mundo 3");
-        int a = 5;
-        JOptionPane.showConfirmDialog(null, "Hola Mundo");
+        //Creación de la ventana
+        VistaPrincipal vistaPrincipal = new VistaPrincipal();
+        //Hacemos visible la ventana
+        vistaPrincipal.setVisible(true);
     }
 }
