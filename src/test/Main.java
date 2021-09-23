@@ -9,5 +9,6 @@ public class Main {
         vistaPrincipal.setVisible(true);
         
         System.out.print("HOLA MUNDO");
+        System.out.println("Hola Mario");
     }
 }
