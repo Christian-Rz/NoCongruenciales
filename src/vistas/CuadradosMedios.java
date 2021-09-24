@@ -12,14 +12,13 @@ public class CuadradosMedios extends javax.swing.JDialog {
         //Alineamos a la vistaPrincipal
         setLocationRelativeTo(parent);
         this.setLocationRelativeTo(null);
-//        modelo= new DefaultTableModel();
-//        modelo.addColumn("Iteraccion");
-//        modelo.addColumn("Semilla Xi0");
-//        modelo.addColumn("Semilla Xi1");
-//        modelo.addColumn("Semilla^2");
-//        modelo.addColumn("Semilla Xi+1");
-//        modelo.addColumn("Pseudonumero");
-//        this.jTable1.setModel(modelo);
+        modelo= new DefaultTableModel();
+        modelo.addColumn("Iteraccion");
+        modelo.addColumn("Semilla Xi0");
+        modelo.addColumn("Semilla^2");
+        modelo.addColumn("Semilla Xi+1");
+        modelo.addColumn("Pseudonumero");
+        this.jTable1.setModel(modelo);
     }
 
     /**
@@ -173,7 +172,7 @@ public class CuadradosMedios extends javax.swing.JDialog {
     //Metodo boton1
     private void boton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton1MouseClicked
         //Guardamos el resultado de los campos
-        String semilla = textField1.getText();
+        String semillaString = textField1.getText();
         String repeticionesString = textField3.getText();
         
         //Verificamos si los RadioButton han sido selecionados
@@ -181,31 +180,77 @@ public class CuadradosMedios extends javax.swing.JDialog {
         boolean selecion2 = radioDerecha.isSelected(); 
         
         //Verificamos si todos los campos fueron selecionados
-        if(semilla.isEmpty() || repeticionesString.isEmpty() || ( !selecion1 && !selecion2)){
+        if(semillaString.isEmpty() || repeticionesString.isEmpty() || ( !selecion1 && !selecion2)){
             JOptionPane.showMessageDialog(null,"Complete todos los campos");
         }else{
             // Guardamos el tamanio de la semilla
-            int sizeSemilla = semilla.length();
+            int sizeSemilla = semillaString.length();
             if(sizeSemilla < 4){
                 JOptionPane.showMessageDialog(null,"La semilla debe ser mayor de 3 digitos");
             }else{
                 JOptionPane.showMessageDialog(null,"perfecto");
-                //Verificamos que radioButton eligio
-                long digitosSemilla = semilla.length();
-                int repeticionesInt = Integer.parseInt(repeticionesString);
-                String [] fila= new String [5];
+                
                 
                 //Variables
-                long resultado1 = 0;
-                String nuevaSemillaString;
-                int sizeSemillaNueva = 0;
+                int repeticionesInt = Integer.parseInt(repeticionesString);
+                String [] fila= new String [5];
+                long semillaLong = Long.parseLong(semillaString);
                 
-                        
+                //otros
+                long semillaCuadrado = Long.parseLong(semillaString);
+                String semillaCuadradoString;
+                int sizeSemillaCuadrado = 0;
+                int mitad;
+                String numerosCentrales;
+                double numeroPseudoaleatorio = 0.0;
+                String semillaStringTabla;
+                
+                //Verificamos que radioButton eligio
                 if(selecion1){
                     for(int i = 0; i < repeticionesInt; ++i){
-                       resultado1 = (long)Math.pow(digitosSemilla, 2);
-                       nuevaSemillaString = Long.toString(resultado1);
-                       sizeSemillaNueva = nuevaSemillaString.length();
+                        if(sizeSemillaCuadrado % 2 == 0){
+                        
+                           semillaCuadrado = (long) Math.pow(semillaLong, 2);
+                           semillaCuadradoString = Long.toString(semillaCuadrado);
+                           sizeSemillaCuadrado = semillaCuadradoString.length();
+                           mitad = (sizeSemillaCuadrado - sizeSemilla) / 2;
+                           numerosCentrales = semillaCuadradoString.substring(mitad,mitad+sizeSemilla);
+                           numeroPseudoaleatorio = Double.parseDouble(numerosCentrales) / (Math.pow(10, sizeSemilla));
+                           semillaStringTabla = Long.toString(semillaLong);
+
+                           //Agregamos los datos a las filas
+                           fila[0] = Integer.toString(i);
+                           fila[1] = semillaStringTabla;
+                           fila[2] = Long.toString(semillaCuadrado);
+                           fila[3] = numerosCentrales;
+                           fila[4] = Double.toString(numeroPseudoaleatorio);
+                           modelo.addRow(fila);
+                           semillaLong = Long.parseLong(numerosCentrales);
+                           String temporal = Long.toString(semillaLong);
+                           sizeSemilla = temporal.length();
+                           
+                        }else{
+                           semillaCuadrado = (long) Math.pow(semillaLong, 2);
+                           semillaCuadradoString = Long.toString(semillaCuadrado);
+                           //Metemos un cero a la izquierda
+                           semillaCuadradoString = "0" + semillaCuadradoString;
+                           sizeSemillaCuadrado = semillaCuadradoString.length();
+                           mitad = (sizeSemillaCuadrado - sizeSemilla) / 2;
+                           numerosCentrales = semillaCuadradoString.substring(mitad,mitad+sizeSemilla);
+                           numeroPseudoaleatorio = Double.parseDouble(numerosCentrales) / (Math.pow(10, sizeSemilla));
+                           semillaStringTabla = Long.toString(semillaLong);
+
+                           //Agregamos los datos a las filas
+                           fila[0] = Integer.toString(i);
+                           fila[1] = semillaStringTabla;
+                           fila[2] = semillaCuadradoString;
+                           fila[3] = numerosCentrales;
+                           fila[4] = Double.toString(numeroPseudoaleatorio);
+                           modelo.addRow(fila);
+                           semillaLong = Long.parseLong(numerosCentrales);
+                           String temporal = Long.toString(semillaLong);
+                           sizeSemilla = temporal.length();
+                        }
                     }
                 }else{
                     
@@ -213,6 +258,7 @@ public class CuadradosMedios extends javax.swing.JDialog {
             }
                 
         }
+    
         
 //       
     }//GEN-LAST:event_boton1MouseClicked
