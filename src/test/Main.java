@@ -7,8 +7,5 @@ public class Main {
         VistaPrincipal vistaPrincipal = new VistaPrincipal();
         //Hacemos visible la ventana
         vistaPrincipal.setVisible(true);
-        
-        System.out.print("HOLA MUNDO");
-        System.out.println("Hola Mario");
     }
 }

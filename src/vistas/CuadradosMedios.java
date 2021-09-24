@@ -1,13 +1,25 @@
 package vistas;
 
-public class CuadradosMedios extends javax.swing.JDialog {
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
+public class CuadradosMedios extends javax.swing.JDialog {
+    DefaultTableModel modelo;
     //Constructor
     public CuadradosMedios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         //Alineamos a la vistaPrincipal
         setLocationRelativeTo(parent);
+        this.setLocationRelativeTo(null);
+//        modelo= new DefaultTableModel();
+//        modelo.addColumn("Iteraccion");
+//        modelo.addColumn("Semilla Xi0");
+//        modelo.addColumn("Semilla Xi1");
+//        modelo.addColumn("Semilla^2");
+//        modelo.addColumn("Semilla Xi+1");
+//        modelo.addColumn("Pseudonumero");
+//        this.jTable1.setModel(modelo);
     }
 
     /**
@@ -19,18 +31,17 @@ public class CuadradosMedios extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupo1 = new javax.swing.ButtonGroup();
         panel1 = new javax.swing.JPanel();
         label1 = new javax.swing.JLabel();
         label2 = new javax.swing.JLabel();
-        label3 = new javax.swing.JLabel();
         label4 = new javax.swing.JLabel();
         textField1 = new javax.swing.JTextField();
-        textField2 = new javax.swing.JTextField();
         textField3 = new javax.swing.JTextField();
         boton1 = new javax.swing.JButton();
         boton2 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        radioDerecha = new javax.swing.JRadioButton();
+        radioIzquierda = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -45,19 +56,13 @@ public class CuadradosMedios extends javax.swing.JDialog {
 
         label2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         label2.setForeground(new java.awt.Color(184, 193, 236));
-        label2.setText("Ingrese la primera semilla");
-
-        label3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        label3.setForeground(new java.awt.Color(184, 193, 236));
-        label3.setText("Ingrese la segunda semilla");
+        label2.setText("Ingrese la semilla x0");
 
         label4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         label4.setForeground(new java.awt.Color(184, 193, 236));
         label4.setText("Ingrese las repeticiones");
 
         textField1.setBackground(new java.awt.Color(255, 255, 255));
-
-        textField2.setBackground(new java.awt.Color(255, 255, 255));
 
         textField3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -88,16 +93,18 @@ public class CuadradosMedios extends javax.swing.JDialog {
             }
         });
 
-        jRadioButton1.setText("Cero a la derecha");
+        grupo1.add(radioDerecha);
+        radioDerecha.setText("Cero a la derecha");
 
-        jRadioButton2.setText("Cero a la izquierda");
+        grupo1.add(radioIzquierda);
+        radioIzquierda.setText("Cero a la izquierda");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Iteración ", "Semilla Xi0", "Semilla Xi1", "Semilla^2", "Semilla Xi+1", "Pseudonumero"
+                "Iteración ", "Semilla Xi", "Semilla^2", "Semilla Xi+1", "Pseudonumero"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -114,21 +121,19 @@ public class CuadradosMedios extends javax.swing.JDialog {
                 .addGap(51, 51, 51)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panel1Layout.createSequentialGroup()
-                        .addComponent(jRadioButton2)
+                        .addComponent(radioIzquierda)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton1))
+                        .addComponent(radioDerecha))
                     .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(75, 75, 75)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panel1Layout.createSequentialGroup()
@@ -145,25 +150,19 @@ public class CuadradosMedios extends javax.swing.JDialog {
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label2)
                     .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label3)
-                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addGap(34, 34, 34)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label4)
                     .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(42, 42, 42)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
-                .addGap(18, 18, 18)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioIzquierda)
+                    .addComponent(radioDerecha)
                     .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(114, 114, 114)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         getContentPane().add(panel1, java.awt.BorderLayout.CENTER);
@@ -173,14 +172,59 @@ public class CuadradosMedios extends javax.swing.JDialog {
 
     //Metodo boton1
     private void boton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton1MouseClicked
-        String semilla1 = textField1.getText();
-        String semilla2 = textField2.getText();
-        String repeticiones = textField3.getText();
+        //Guardamos el resultado de los campos
+        String semilla = textField1.getText();
+        String repeticionesString = textField3.getText();
+        
+        //Verificamos si los RadioButton han sido selecionados
+        boolean selecion1 = radioIzquierda.isSelected();
+        boolean selecion2 = radioDerecha.isSelected(); 
+        
+        //Verificamos si todos los campos fueron selecionados
+        if(semilla.isEmpty() || repeticionesString.isEmpty() || ( !selecion1 && !selecion2)){
+            JOptionPane.showMessageDialog(null,"Complete todos los campos");
+        }else{
+            // Guardamos el tamanio de la semilla
+            int sizeSemilla = semilla.length();
+            if(sizeSemilla < 4){
+                JOptionPane.showMessageDialog(null,"La semilla debe ser mayor de 3 digitos");
+            }else{
+                JOptionPane.showMessageDialog(null,"perfecto");
+                //Verificamos que radioButton eligio
+                long digitosSemilla = semilla.length();
+                int repeticionesInt = Integer.parseInt(repeticionesString);
+                String [] fila= new String [5];
+                
+                //Variables
+                long resultado1 = 0;
+                String nuevaSemillaString;
+                int sizeSemillaNueva = 0;
+                
+                        
+                if(selecion1){
+                    for(int i = 0; i < repeticionesInt; ++i){
+                       resultado1 = (long)Math.pow(digitosSemilla, 2);
+                       nuevaSemillaString = Long.toString(resultado1);
+                       sizeSemillaNueva = nuevaSemillaString.length();
+                    }
+                }else{
+                    
+                }
+            }
+                
+        }
+        
+//       
     }//GEN-LAST:event_boton1MouseClicked
     
     //Metodo boton2
     private void boton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton2MouseClicked
-        
+    try{
+        textField1.setText("");
+        textField3.setText("");
+        }catch(Exception e){
+        JOptionPane.showMessageDialog(null,"Hubo dificultades en el programa","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_boton2MouseClicked
     
     /**
@@ -228,17 +272,16 @@ public class CuadradosMedios extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton1;
     private javax.swing.JButton boton2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.ButtonGroup grupo1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel label1;
     private javax.swing.JLabel label2;
-    private javax.swing.JLabel label3;
     private javax.swing.JLabel label4;
     private javax.swing.JPanel panel1;
+    private javax.swing.JRadioButton radioDerecha;
+    private javax.swing.JRadioButton radioIzquierda;
     private javax.swing.JTextField textField1;
-    private javax.swing.JTextField textField2;
     private javax.swing.JTextField textField3;
     // End of variables declaration//GEN-END:variables
 }
