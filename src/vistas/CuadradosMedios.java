@@ -97,6 +97,11 @@ public class CuadradosMedios extends javax.swing.JDialog {
 
         grupo1.add(radioIzquierda);
         radioIzquierda.setText("Cero a la izquierda");
+        radioIzquierda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioIzquierdaActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -272,6 +277,10 @@ public class CuadradosMedios extends javax.swing.JDialog {
         JOptionPane.showMessageDialog(null,"Hubo dificultades en el programa","ERROR",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_boton2MouseClicked
+
+    private void radioIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioIzquierdaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioIzquierdaActionPerformed
     
     /**
      * @param args the command line arguments
