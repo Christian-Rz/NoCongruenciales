@@ -130,7 +130,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     //Metodo botonProductos
     private void botonConstantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConstantesMouseClicked
-        // TODO add your handling code here:
+        MultiplicadorConstante vistaMultiplicadorConstante = new MultiplicadorConstante(this,true);
+        vistaMultiplicadorConstante.setVisible(true);
     }//GEN-LAST:event_botonConstantesMouseClicked
 
     /**
