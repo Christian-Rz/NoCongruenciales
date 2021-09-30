@@ -7,6 +7,7 @@ import logica.Utilidades;
 public class CuadradosMedios extends javax.swing.JDialog {
     DefaultTableModel modelo;
     Utilidades utilidades;
+    
     //Constructor
     public CuadradosMedios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -47,29 +48,40 @@ public class CuadradosMedios extends javax.swing.JDialog {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
-        panel1.setBackground(new java.awt.Color(35, 41, 70));
+        panel1.setBackground(new java.awt.Color(40, 42, 54));
 
         label1.setBackground(new java.awt.Color(255, 255, 255));
-        label1.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
+        label1.setFont(new java.awt.Font("Baskerville Old Face", 1, 40)); // NOI18N
         label1.setForeground(new java.awt.Color(255, 255, 255));
-        label1.setText("Algoritmo de Productos Medios");
+        label1.setText("Algoritmo Cuadrados Medios");
 
-        label2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        label2.setFont(new java.awt.Font("Baskerville Old Face", 0, 20)); // NOI18N
         label2.setForeground(new java.awt.Color(184, 193, 236));
         label2.setText("Ingrese la semilla x0");
 
-        label4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        label4.setFont(new java.awt.Font("Baskerville Old Face", 0, 20)); // NOI18N
         label4.setForeground(new java.awt.Color(184, 193, 236));
         label4.setText("Ingrese las repeticiones");
 
         textField1.setBackground(new java.awt.Color(255, 255, 255));
+        textField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textField1KeyTyped(evt);
+            }
+        });
 
         textField3.setBackground(new java.awt.Color(255, 255, 255));
+        textField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textField3KeyTyped(evt);
+            }
+        });
 
-        boton1.setBackground(new java.awt.Color(238, 187, 195));
-        boton1.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        boton1.setForeground(new java.awt.Color(35, 41, 70));
+        boton1.setBackground(new java.awt.Color(0, 0, 0));
+        boton1.setFont(new java.awt.Font("Baskerville Old Face", 1, 15)); // NOI18N
+        boton1.setForeground(new java.awt.Color(255, 255, 255));
         boton1.setText("Generar");
         boton1.setMaximumSize(new java.awt.Dimension(100, 50));
         boton1.setMinimumSize(new java.awt.Dimension(100, 50));
@@ -81,9 +93,9 @@ public class CuadradosMedios extends javax.swing.JDialog {
             }
         });
 
-        boton2.setBackground(new java.awt.Color(238, 187, 195));
-        boton2.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        boton2.setForeground(new java.awt.Color(35, 41, 70));
+        boton2.setBackground(new java.awt.Color(0, 0, 0));
+        boton2.setFont(new java.awt.Font("Baskerville Old Face", 1, 15)); // NOI18N
+        boton2.setForeground(new java.awt.Color(255, 255, 255));
         boton2.setText("Limpiar");
         boton2.setMaximumSize(new java.awt.Dimension(100, 50));
         boton2.setMinimumSize(new java.awt.Dimension(100, 50));
@@ -94,16 +106,17 @@ public class CuadradosMedios extends javax.swing.JDialog {
             }
         });
 
+        radioDerecha.setBackground(new java.awt.Color(40, 42, 54));
         grupo1.add(radioDerecha);
+        radioDerecha.setFont(new java.awt.Font("Baskerville Old Face", 0, 20)); // NOI18N
+        radioDerecha.setForeground(new java.awt.Color(255, 255, 255));
         radioDerecha.setText("Cero a la derecha");
 
+        radioIzquierda.setBackground(new java.awt.Color(40, 42, 54));
         grupo1.add(radioIzquierda);
+        radioIzquierda.setFont(new java.awt.Font("Baskerville Old Face", 0, 20)); // NOI18N
+        radioIzquierda.setForeground(new java.awt.Color(255, 255, 255));
         radioIzquierda.setText("Cero a la izquierda");
-        radioIzquierda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioIzquierdaActionPerformed(evt);
-            }
-        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,40 +132,41 @@ public class CuadradosMedios extends javax.swing.JDialog {
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addGap(0, 172, Short.MAX_VALUE)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(153, 153, 153))
             .addGroup(panel1Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addComponent(radioIzquierda)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(radioDerecha))
-                    .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(75, 75, 75)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(radioDerecha)
+                        .addGap(75, 75, 75)
                         .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
             .addGroup(panel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(34, 34, 34)
                 .addComponent(label1)
-                .addGap(65, 65, 65)
+                .addGap(62, 62, 62)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label2)
                     .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -162,13 +176,13 @@ public class CuadradosMedios extends javax.swing.JDialog {
                     .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radioIzquierda)
                     .addComponent(radioDerecha)
                     .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(114, 114, 114)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                    .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(radioIzquierda))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         getContentPane().add(panel1, java.awt.BorderLayout.CENTER);
@@ -195,14 +209,13 @@ public class CuadradosMedios extends javax.swing.JDialog {
             if(sizeSemilla < 4){
                 JOptionPane.showMessageDialog(null,"La semilla debe ser mayor de 3 digitos");
             }else{
+                //Borramos los datos de las celdas
                 try {
-                int b = jTable1.getRowCount();
-                for (int n = b - 1; n >= 0;) {
-                    modelo.removeRow(n);
-                    n = n - 1;
+                    for (int n = jTable1.getRowCount() - 1; n >= 0;--n) {
+                        modelo.removeRow(n);
+                    }
+                } catch (Exception e) {
                 }
-            } catch (Exception e) {
-            }
           
                 //Verificamos que radioButton eligio
                 if(selecion1){
@@ -218,23 +231,34 @@ public class CuadradosMedios extends javax.swing.JDialog {
     
     //Metodo boton2
     private void boton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton2MouseClicked
-    try{
-        int b = jTable1.getRowCount();
-        for (int n = b - 1; n >= 0;) {
+    // Limpiamos todos los campos y las celdas
+    try {
+        for (int n = jTable1.getRowCount() - 1; n >= 0;--n) {
             modelo.removeRow(n);
-            n = n - 1;
         }
         grupo1.clearSelection();
         textField1.setText("");
         textField3.setText("");
-        }catch(Exception e){
+    }catch(Exception e){
         JOptionPane.showMessageDialog(null,"Hubo dificultades en el programa","ERROR",JOptionPane.ERROR_MESSAGE);
-        }
+    }
     }//GEN-LAST:event_boton2MouseClicked
 
-    private void radioIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioIzquierdaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioIzquierdaActionPerformed
+    private void textField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField1KeyTyped
+        //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_textField1KeyTyped
+
+    private void textField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField3KeyTyped
+        //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_textField3KeyTyped
     
     /**
      * @param args the command line arguments

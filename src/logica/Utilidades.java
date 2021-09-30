@@ -68,11 +68,10 @@ public class Utilidades {
                 semillaCuadradoString = "0" + semillaCuadradoString;
                 sizeSemillaCuadrado = semillaCuadradoString.length();
                 mitad = (sizeSemillaCuadrado - sizeSemilla) / 2;
-                if(sizeSemillaCuadrado % 2 == 0){
-                    numerosCentrales = semillaCuadradoString.substring(mitad ,(mitad+sizeSemilla));
-                }else{
-                    numerosCentrales = semillaCuadradoString.substring(mitad ,(mitad+sizeSemilla));
-                }
+                
+                //
+                numerosCentrales = semillaCuadradoString.substring(mitad ,(mitad+sizeSemilla));
+                
                 numeroPseudoaleatorio = Double.parseDouble(numerosCentrales) / (Math.pow(10, sizeSemilla));
                 semillaStringTabla = Long.toString(semillaLong);
                 
@@ -136,11 +135,10 @@ public class Utilidades {
                 semillaCuadradoString = semillaCuadradoString + "0";
                 sizeSemillaCuadrado = semillaCuadradoString.length();
                 mitad = (sizeSemillaCuadrado - sizeSemilla) / 2;
-                if(sizeSemillaCuadrado % 2 == 0){
-                    numerosCentrales = semillaCuadradoString.substring(mitad,(mitad+sizeSemilla));
-                }else{
-                    numerosCentrales = semillaCuadradoString.substring(mitad ,(mitad+sizeSemilla));
-                }
+               
+                //
+                numerosCentrales = semillaCuadradoString.substring(mitad,(mitad+sizeSemilla));
+               
                 numeroPseudoaleatorio = Double.parseDouble(numerosCentrales) / (Math.pow(10, sizeSemilla));
                 semillaStringTabla = Long.toString(semillaLong);
                 

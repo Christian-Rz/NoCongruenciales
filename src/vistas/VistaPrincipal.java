@@ -126,14 +126,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     //Metodo botonProductos
     private void botonProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProductosMouseClicked
-        this.dispose();
         ProductosMedios vistaPM = new ProductosMedios(this,true);
         vistaPM.setVisible(true);
     }//GEN-LAST:event_botonProductosMouseClicked
 
     //Metodo botonProductos
     private void botonConstantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConstantesMouseClicked
-       this.dispose();
         MultiplicadorConstante vistaMultiplicadorConstante = new MultiplicadorConstante(this,true);
         vistaMultiplicadorConstante.setVisible(true);
     }//GEN-LAST:event_botonConstantesMouseClicked
