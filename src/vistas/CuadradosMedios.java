@@ -192,21 +192,16 @@ public class CuadradosMedios extends javax.swing.JDialog {
 
     //Metodo boton1
     private void boton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton1MouseClicked
-       //Guardamos el resultado de los campos
-        String semillaString = textField1.getText();
-        String repeticionesString = textField3.getText();
-
-        //Verificamos si los RadioButton han sido selecionados
-        boolean selecion1 = radioIzquierda.isSelected();
+      boolean selecion1 = radioIzquierda.isSelected();
         boolean selecion2 = radioDerecha.isSelected();
 
-        //Verificamos si todos los campos fueron selecionados
-        if(semillaString.isEmpty() || repeticionesString.isEmpty() || ( !selecion1 && !selecion2)){
+        if(textField1.getText().isEmpty() || textField3.getText().isEmpty() || (!selecion1 && !selecion2)){
             JOptionPane.showMessageDialog(null,"Complete todos los campos");
         }else{
-            // Guardamos el tamanio de la semilla
-            int sizeSemilla = semillaString.length();
-            if(sizeSemilla < 4){
+            long semilla = Integer.parseInt(textField1.getText());
+            int digitos = (Long.toString(semilla)).length();
+            int repeticiones = Integer.parseInt(textField3.getText());
+            if(digitos < 4 || textField1.getText().equals("1000") || textField1.getText().equals("1100") || textField1.getText().equals("1110")){
                 JOptionPane.showMessageDialog(null,"La semilla debe ser mayor de 3 digitos");
             }else{
                 //Borramos los datos de las celdas
@@ -216,14 +211,10 @@ public class CuadradosMedios extends javax.swing.JDialog {
                     }
                 } catch (Exception e) {
                 }
-          
-                //Verificamos que radioButton eligio
                 if(selecion1){
-                //Cuando se escoja cero a la izquierda
-                    utilidades.izquierdaCuadrados(semillaString, repeticionesString, sizeSemilla, modelo);
-                //Cuando se escoja cero a la derecha
+                    utilidades.cuadradosMediosIzq(semilla, digitos, repeticiones, modelo);
                 }else{
-                    utilidades.derechaCuadrados(semillaString, repeticionesString, sizeSemilla, modelo);
+                    utilidades.cuadradosMediosDrc(semilla, digitos, repeticiones, modelo);
                 }
             }
         }
