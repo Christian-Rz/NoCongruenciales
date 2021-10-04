@@ -2,7 +2,7 @@ package logica;
 
 import javax.swing.table.DefaultTableModel;
 
-public class Utilidades {
+public class Cuadrados {
     
     //--------Metodos para el algoritmo de cuadrados medios---------------------
     public static String[] agregarDatos(String fila[], int i, long semilla, 

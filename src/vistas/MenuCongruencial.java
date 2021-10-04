@@ -5,12 +5,16 @@
  */
 package vistas;
 
-public class VistaPrincipal extends javax.swing.JFrame {
+/**
+ *
+ * @author chris
+ */
+public class MenuCongruencial extends javax.swing.JFrame {
 
     /**
-     * Creates new form VistaPrincipalUno
+     * Creates new form MenuCongruencial
      */
-    public VistaPrincipal() {
+    public MenuCongruencial() {
         initComponents();
     }
 
@@ -26,20 +30,28 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         boton1 = new javax.swing.JButton();
         boton2 = new javax.swing.JButton();
+        boton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        boton1.setText("No congruencial");
+        boton1.setText("Lineal");
         boton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 boton1MouseClicked(evt);
             }
         });
 
-        boton2.setText("Congruencial");
+        boton2.setText("Multiplicativo");
         boton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 boton2MouseClicked(evt);
+            }
+        });
+
+        boton3.setText("Aditivo");
+        boton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boton3MouseClicked(evt);
             }
         });
 
@@ -48,20 +60,23 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(49, 49, 49)
                 .addComponent(boton1)
-                .addGap(62, 62, 62)
+                .addGap(39, 39, 39)
                 .addComponent(boton2)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(boton3)
+                .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
+                .addContainerGap(162, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boton1)
-                    .addComponent(boton2))
-                .addGap(93, 93, 93))
+                    .addComponent(boton2)
+                    .addComponent(boton3))
+                .addGap(116, 116, 116))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -70,16 +85,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton1MouseClicked
-        //Creación de la ventana
-        MenuNoCongruencial vistaNoCongruencial = new MenuNoCongruencial();
-        //Hacemos visible la ventana
-        vistaNoCongruencial.setVisible(true);
+       CongruencialLineal vistaLineal = new CongruencialLineal(this,true);
+       vistaLineal.setVisible(true);
     }//GEN-LAST:event_boton1MouseClicked
 
     private void boton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton2MouseClicked
-        MenuCongruencial vistaCongruencial = new MenuCongruencial();
-        vistaCongruencial.setVisible(true);
+       CongruencialMultiplicativo vistaMultiplicativo = new CongruencialMultiplicativo(this,true);
+       vistaMultiplicativo.setVisible(true);
     }//GEN-LAST:event_boton2MouseClicked
+
+    private void boton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton3MouseClicked
+       CongruencialAditivo vistaAditivo = new CongruencialAditivo(this,true);
+       vistaAditivo.setVisible(true);
+    }//GEN-LAST:event_boton3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -98,21 +116,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuCongruencial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuCongruencial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuCongruencial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuCongruencial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaPrincipal().setVisible(true);
+                new MenuCongruencial().setVisible(true);
             }
         });
     }
@@ -120,6 +137,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton1;
     private javax.swing.JButton boton2;
+    private javax.swing.JButton boton3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

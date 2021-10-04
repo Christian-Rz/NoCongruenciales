@@ -2,11 +2,11 @@ package vistas;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import logica.Utilidades;
+import logica.Cuadrados;
 
 public class CuadradosMedios extends javax.swing.JDialog {
     DefaultTableModel modelo;
-    Utilidades utilidades;
+    Cuadrados utilidades;
     
     //Constructor
     public CuadradosMedios(java.awt.Frame parent, boolean modal) {

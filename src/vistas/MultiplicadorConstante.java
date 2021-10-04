@@ -237,7 +237,7 @@ public class MultiplicadorConstante extends javax.swing.JDialog {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         this.dispose();
-        VistaPrincipal VP = new VistaPrincipal();
+        MenuNoCongruencial VP = new MenuNoCongruencial();
         VP.setVisible(true);
     }//GEN-LAST:event_jButton3MouseClicked
 

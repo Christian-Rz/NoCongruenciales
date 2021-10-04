@@ -390,7 +390,7 @@ public class ProductosMedios extends javax.swing.JDialog {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
-        VistaPrincipal VP = new VistaPrincipal();
+        MenuNoCongruencial VP = new MenuNoCongruencial();
         VP.setVisible(true);
     }//GEN-LAST:event_btnSalirActionPerformed
 
