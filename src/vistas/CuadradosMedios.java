@@ -46,6 +46,7 @@ public class CuadradosMedios extends javax.swing.JDialog {
         radioIzquierda = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        boton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -80,7 +81,7 @@ public class CuadradosMedios extends javax.swing.JDialog {
         });
 
         boton1.setBackground(new java.awt.Color(0, 0, 0));
-        boton1.setFont(new java.awt.Font("Baskerville Old Face", 1, 15)); // NOI18N
+        boton1.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
         boton1.setForeground(new java.awt.Color(255, 255, 255));
         boton1.setText("Generar");
         boton1.setMaximumSize(new java.awt.Dimension(100, 50));
@@ -94,7 +95,7 @@ public class CuadradosMedios extends javax.swing.JDialog {
         });
 
         boton2.setBackground(new java.awt.Color(0, 0, 0));
-        boton2.setFont(new java.awt.Font("Baskerville Old Face", 1, 15)); // NOI18N
+        boton2.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
         boton2.setForeground(new java.awt.Color(255, 255, 255));
         boton2.setText("Limpiar");
         boton2.setMaximumSize(new java.awt.Dimension(100, 50));
@@ -128,6 +129,24 @@ public class CuadradosMedios extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        boton3.setBackground(new java.awt.Color(0, 0, 0));
+        boton3.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
+        boton3.setForeground(new java.awt.Color(255, 255, 255));
+        boton3.setText("Regresar");
+        boton3.setMaximumSize(new java.awt.Dimension(100, 50));
+        boton3.setMinimumSize(new java.awt.Dimension(100, 50));
+        boton3.setPreferredSize(new java.awt.Dimension(100, 50));
+        boton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boton3MouseClicked(evt);
+            }
+        });
+        boton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
@@ -150,8 +169,10 @@ public class CuadradosMedios extends javax.swing.JDialog {
                         .addGap(75, 75, 75)
                         .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(205, Short.MAX_VALUE))
+                        .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(boton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(87, Short.MAX_VALUE))
             .addGroup(panel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -179,7 +200,8 @@ public class CuadradosMedios extends javax.swing.JDialog {
                     .addComponent(radioDerecha)
                     .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(radioIzquierda))
+                    .addComponent(radioIzquierda)
+                    .addComponent(boton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(36, Short.MAX_VALUE))
@@ -250,6 +272,16 @@ public class CuadradosMedios extends javax.swing.JDialog {
             evt.consume();
         }
     }//GEN-LAST:event_textField3KeyTyped
+
+    private void boton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boton3MouseClicked
+
+    private void boton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton3ActionPerformed
+        this.dispose();
+        MenuNoCongruencial mnc = new MenuNoCongruencial();
+        mnc.setVisible(true);
+    }//GEN-LAST:event_boton3ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -296,6 +328,7 @@ public class CuadradosMedios extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton1;
     private javax.swing.JButton boton2;
+    private javax.swing.JButton boton3;
     private javax.swing.ButtonGroup grupo1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

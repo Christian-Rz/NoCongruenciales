@@ -12,7 +12,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
      */
     public VistaPrincipal() {
         initComponents();
-    }
+   }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,47 +27,76 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         boton1 = new javax.swing.JButton();
         boton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        boton1.setText("No congruencial");
+        jPanel1.setBackground(new java.awt.Color(40, 42, 54));
+
+        boton1.setBackground(new java.awt.Color(255, 255, 255));
+        boton1.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        boton1.setForeground(new java.awt.Color(0, 0, 0));
+        boton1.setText("NO CONGRUENCIAL");
+        boton1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         boton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 boton1MouseClicked(evt);
             }
         });
+        boton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton1ActionPerformed(evt);
+            }
+        });
 
-        boton2.setText("Congruencial");
+        boton2.setBackground(new java.awt.Color(255, 255, 255));
+        boton2.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        boton2.setForeground(new java.awt.Color(0, 0, 0));
+        boton2.setText("CONGRUENCIAL");
+        boton2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         boton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 boton2MouseClicked(evt);
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("BIENVENIDO");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(boton1)
-                .addGap(62, 62, 62)
-                .addComponent(boton2)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel1)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boton1)
-                    .addComponent(boton2))
-                .addGap(93, 93, 93))
+                    .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton1MouseClicked
@@ -74,12 +104,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
         MenuNoCongruencial vistaNoCongruencial = new MenuNoCongruencial();
         //Hacemos visible la ventana
         vistaNoCongruencial.setVisible(true);
+        
     }//GEN-LAST:event_boton1MouseClicked
 
     private void boton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton2MouseClicked
-        MenuCongruencial vistaCongruencial = new MenuCongruencial();
+        MenuCongruencial1 vistaCongruencial = new MenuCongruencial1();
         vistaCongruencial.setVisible(true);
     }//GEN-LAST:event_boton2MouseClicked
+
+    private void boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,6 +155,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton1;
     private javax.swing.JButton boton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

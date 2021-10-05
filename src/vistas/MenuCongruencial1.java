@@ -1,10 +1,10 @@
 //Paquetes
 package vistas;
 //Clase
-public class MenuNoCongruencial extends javax.swing.JFrame {
+public class MenuCongruencial1 extends javax.swing.JFrame {
    
   //Constructor
-    public MenuNoCongruencial() {
+    public MenuCongruencial1() {
         initComponents();
     }
      
@@ -31,7 +31,7 @@ public class MenuNoCongruencial extends javax.swing.JFrame {
 
         label1.setFont(new java.awt.Font("Baskerville Old Face", 1, 50)); // NOI18N
         label1.setForeground(new java.awt.Color(255, 255, 255));
-        label1.setText("Algoritmos No Congruenciales");
+        label1.setText("Algoritmos Congruenciales");
 
         label2.setFont(new java.awt.Font("Baskerville Old Face", 0, 30)); // NOI18N
         label2.setForeground(new java.awt.Color(184, 193, 236));
@@ -40,7 +40,7 @@ public class MenuNoCongruencial extends javax.swing.JFrame {
         botonCuadrados.setBackground(new java.awt.Color(0, 0, 0));
         botonCuadrados.setFont(new java.awt.Font("Baskerville Old Face", 0, 20)); // NOI18N
         botonCuadrados.setForeground(new java.awt.Color(255, 255, 255));
-        botonCuadrados.setText("Cuadrados  Medios");
+        botonCuadrados.setText("Lineal");
         botonCuadrados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         botonCuadrados.setPreferredSize(new java.awt.Dimension(185, 82));
         botonCuadrados.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -48,11 +48,16 @@ public class MenuNoCongruencial extends javax.swing.JFrame {
                 botonCuadradosMouseClicked(evt);
             }
         });
+        botonCuadrados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCuadradosActionPerformed(evt);
+            }
+        });
 
         botonProductos.setBackground(new java.awt.Color(0, 0, 0));
         botonProductos.setFont(new java.awt.Font("Baskerville Old Face", 0, 20)); // NOI18N
         botonProductos.setForeground(new java.awt.Color(255, 255, 255));
-        botonProductos.setText("Productos Medios");
+        botonProductos.setText("Multiplicativo");
         botonProductos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         botonProductos.setPreferredSize(new java.awt.Dimension(185, 82));
         botonProductos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,12 +69,17 @@ public class MenuNoCongruencial extends javax.swing.JFrame {
         botonConstantes.setBackground(new java.awt.Color(0, 0, 0));
         botonConstantes.setFont(new java.awt.Font("Baskerville Old Face", 0, 20)); // NOI18N
         botonConstantes.setForeground(new java.awt.Color(255, 255, 255));
-        botonConstantes.setText("Productos Constantes");
+        botonConstantes.setText("Aditivo");
         botonConstantes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         botonConstantes.setPreferredSize(new java.awt.Dimension(185, 82));
         botonConstantes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonConstantesMouseClicked(evt);
+            }
+        });
+        botonConstantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonConstantesActionPerformed(evt);
             }
         });
 
@@ -86,20 +96,21 @@ public class MenuNoCongruencial extends javax.swing.JFrame {
                 .addComponent(botonConstantes, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
             .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addComponent(label2)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(label2))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(label1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(label1)
-                .addGap(78, 78, 78))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
+                .addGap(111, 111, 111)
                 .addComponent(label1)
-                .addGap(78, 78, 78)
+                .addGap(77, 77, 77)
                 .addComponent(label2)
                 .addGap(34, 34, 34)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -118,28 +129,32 @@ public class MenuNoCongruencial extends javax.swing.JFrame {
     //Metodo botonCuadrados
     private void botonCuadradosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCuadradosMouseClicked
         this.dispose();
-        //Creamos la ventana
-        CuadradosMedios vistaCuadradosMedios = new CuadradosMedios(this,true);
-        //Hacemos visible la ventana
-        vistaCuadradosMedios.setVisible(true);  
+        CongruencialLineal vistaLineal = new CongruencialLineal(this,true);
+        vistaLineal.setVisible(true); 
     }//GEN-LAST:event_botonCuadradosMouseClicked
 
     //Metodo botonProductos
     private void botonProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProductosMouseClicked
-        this.dispose();
-        ProductosMedios vistaPM = new ProductosMedios(this,true);
-        vistaPM.setVisible(true);
+       this.dispose();
+       CongruencialMultiplicativo vistaMultiplicativo = new CongruencialMultiplicativo(this,true);
+       vistaMultiplicativo.setVisible(true);
     }//GEN-LAST:event_botonProductosMouseClicked
 
     //Metodo boton Multiplicador constante
     private void botonConstantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConstantesMouseClicked
         //Cerramos la anterior ventana para evitar multiventanas
         this.dispose();
-        //Creamos la ventana
-        MultiplicadorConstante vistaMC = new MultiplicadorConstante(this,true);
-        //La hacemos visible
-        vistaMC.setVisible(true);    
+        CongruencialAditivo vistaAditivo = new CongruencialAditivo(this,true);
+        vistaAditivo.setVisible(true);    
     }//GEN-LAST:event_botonConstantesMouseClicked
+
+    private void botonCuadradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCuadradosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCuadradosActionPerformed
+
+    private void botonConstantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConstantesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonConstantesActionPerformed
 
     /**
      * @param args the command line arguments
