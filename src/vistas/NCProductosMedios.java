@@ -48,7 +48,6 @@ public class NCProductosMedios extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btnSalir = new javax.swing.JButton();
         btnGenerar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         rbtnIzq = new javax.swing.JRadioButton();
@@ -86,17 +85,6 @@ public class NCProductosMedios extends javax.swing.JDialog {
             }
         });
         jScrollPane1.setViewportView(jTable1);
-
-        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalir.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
-        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalir.setText("Regresar");
-        btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
 
         btnGenerar.setBackground(new java.awt.Color(255, 255, 255));
         btnGenerar.setFont(new java.awt.Font("Baskerville Old Face", 1, 18)); // NOI18N
@@ -182,10 +170,9 @@ public class NCProductosMedios extends javax.swing.JDialog {
                         .addComponent(txtSem2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(193, 193, 193))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(21, 21, 21)
                         .addComponent(btnGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(37, 37, 37)
                         .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -221,9 +208,8 @@ public class NCProductosMedios extends javax.swing.JDialog {
                     .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimpiar)
                     .addComponent(btnGenerar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(222, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,12 +374,6 @@ public class NCProductosMedios extends javax.swing.JDialog {
         txtRep.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        this.dispose();
-        VistaPrincipal VP = new VistaPrincipal();
-        VP.setVisible(true);
-    }//GEN-LAST:event_btnSalirActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -442,7 +422,6 @@ public class NCProductosMedios extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerar;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnSalir;
     private javax.swing.ButtonGroup direccionGroup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
