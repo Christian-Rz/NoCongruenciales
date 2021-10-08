@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author Valencia
  */
-public class MultiplicadorConstante extends javax.swing.JDialog {
+public class NCMultiplicadorConstante extends javax.swing.JDialog {
 
     /**
      * Creates new form MultiplicadorConstante
      */
-    public MultiplicadorConstante(java.awt.Frame parent, boolean modal) {
+    public NCMultiplicadorConstante(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -237,7 +237,7 @@ public class MultiplicadorConstante extends javax.swing.JDialog {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         this.dispose();
-        MenuNoCongruencial VP = new MenuNoCongruencial();
+        VistaPrincipal VP = new VistaPrincipal();
         VP.setVisible(true);
     }//GEN-LAST:event_jButton3MouseClicked
 
@@ -262,20 +262,20 @@ public class MultiplicadorConstante extends javax.swing.JDialog {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(MultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(NCMultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(MultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(NCMultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(MultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(NCMultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(MultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(NCMultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the dialog */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                MultiplicadorConstante dialog = new MultiplicadorConstante(new javax.swing.JFrame(), true);
+//                NCMultiplicadorConstante dialog = new NCMultiplicadorConstante(new javax.swing.JFrame(), true);
 //                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 //                    @Override
 //                    public void windowClosing(java.awt.event.WindowEvent e) {

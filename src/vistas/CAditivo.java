@@ -4,12 +4,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.Aditivo;
 
-public class CongruencialAditivo extends javax.swing.JDialog {
+public class CAditivo extends javax.swing.JDialog {
     DefaultTableModel modelo;
     DefaultTableModel modelo2;
     Aditivo aditivo;
     
-    public CongruencialAditivo(java.awt.Frame parent, boolean modal) {
+    public CAditivo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         //Alineamos a la vistaPrincipal
@@ -313,20 +313,20 @@ public class CongruencialAditivo extends javax.swing.JDialog {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(CongruencialAditivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(CAditivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(CongruencialAditivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(CAditivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(CongruencialAditivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(CAditivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(CongruencialAditivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(CAditivo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the dialog */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                CongruencialAditivo dialog = new CongruencialAditivo(new javax.swing.JFrame(), true);
+//                CAditivo dialog = new CAditivo(new javax.swing.JFrame(), true);
 //                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 //                    @Override
 //                    public void windowClosing(java.awt.event.WindowEvent e) {
