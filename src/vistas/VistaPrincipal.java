@@ -266,12 +266,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_boton6MouseClicked
 
     private void boton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton5ActionPerformed
-
+         
     }//GEN-LAST:event_boton5ActionPerformed
 
     private void boton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton5MouseClicked
-        CMultiplicativo vistaMultiplicativo = new CMultiplicativo(this,true);
-        vistaMultiplicativo.setVisible(true);
+        CongruenciaMultiplicativo CM = new CongruenciaMultiplicativo(this, true);
+        CM.setVisible(true);
     }//GEN-LAST:event_boton5MouseClicked
 
     private void boton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton2ActionPerformed
