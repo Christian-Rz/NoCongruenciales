@@ -99,7 +99,7 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
         BGenerar.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
         BGenerar.setForeground(new java.awt.Color(255, 255, 255));
         BGenerar.setText("Generar");
-        BGenerar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 4, true));
+        BGenerar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         BGenerar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BGenerarMouseClicked(evt);
