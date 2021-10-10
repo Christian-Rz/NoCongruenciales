@@ -12,6 +12,7 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
     /**
      * Creates new form MultiplicadorConstante
      */
+        //Constructor
     public NCMultiplicadorConstante(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -46,6 +47,8 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
         Semillax0 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         T1 = new javax.swing.JTable();
+        CD = new javax.swing.JRadioButton();
+        CI = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -132,6 +135,16 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(T1);
 
+        CD.setBackground(new java.awt.Color(40, 42, 54));
+        CD.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        CD.setForeground(new java.awt.Color(255, 255, 255));
+        CD.setText("Cero a la derecha");
+
+        CI.setBackground(new java.awt.Color(40, 42, 54));
+        CI.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        CI.setForeground(new java.awt.Color(255, 255, 255));
+        CI.setText("Cero a la izquierda");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -140,8 +153,16 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(BGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(53, 53, 53)
+                            .addComponent(CD)
+                            .addGap(18, 18, 18)
+                            .addComponent(CI))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel3))
@@ -154,13 +175,9 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(Semillax0, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(Repeticiones, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addGap(34, 34, 34)
-                            .addComponent(jLabel1)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel1))))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -178,12 +195,19 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(Repeticiones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CD)
+                            .addComponent(CI))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -202,7 +226,7 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
     }//GEN-LAST:event_RepeticionesActionPerformed
 
     private void BGenerarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BGenerarMouseClicked
-        //Variables
+        //Declaracion de las variables
         String se  = Semillax0.getText();
         String re  = Repeticiones.getText();
         String con = Constante.getText();
@@ -214,21 +238,20 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
         double num4;
     
             if(dato < 4){
-                JOptionPane.showMessageDialog(null,"Debe iniciar un numero mayor de 3 cifras");
-            }
-
+                JOptionPane.showMessageDialog(null,"En la semilla debe iniciar un numero mayor de 3 cifras");
+                Semillax0.setText("");
+            }else
             if(se.isEmpty() || re.isEmpty()){
                 JOptionPane.showMessageDialog(null,"No deje nungun campo vacio");
-            } 
-          String opcion = JOptionPane.showInputDialog("¿En donde se coloca el 0, Izquierda o Derecha?");
-            if(opcion.equals("")){
-            JOptionPane.showMessageDialog(null,"Debe indicar donde se colocara el 0","Aviso", JOptionPane.ERROR_MESSAGE);
-            } else if(opcion.equals("Izquierda") || opcion.equals("izquierda") || opcion.equals("izq")){
-            num1 = Long.parseLong(se);
+                
+            } else
+            //Comienza la evaluacion si es cero a la izquierda
+          if(CI.isSelected()){
+              num1 = Long.parseLong(se);
             num2 = Long.parseLong(con);
             snum2 = con;
           String [] fila = new String [6];
-            for(i=0;i<Integer.parseInt(se);i++)
+            for(i=0;i<Integer.parseInt(re);i++)
             {
                 num3 = (long)(num1 * num2);
                 snum3 = Long.toString(num3);
@@ -246,19 +269,18 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
                     modelo.addRow(fila);
                     num1=Long.parseLong(snum4);
             }
-           } else if (opcion.equals("Derecha") || opcion.equals("derecha") || 
-            opcion.equals("der")){
-                    num1= Long.parseLong(se);
+            
+             //Comienza la evaluacion si es cero a la derecha
+    }else if(CD.isSelected()){
+    num1= Long.parseLong(se);
                     num2= Long.parseLong(con);
                     snum2=con;
                 String [] fila= new String [6];
-                if(dato%2==0){
-                    
+                if(dato%2==0){   
                     for(i=0;i<Integer.parseInt(re);i++){
                         num3= (long)(num1*num2);
                         snum3=Long.toString(num3);
-                        dato2=snum3.length();
-                        
+                        dato2=snum3.length();       
                 pch=(dato2-dato)/2;
                 if(dato%2!=0){snum4=snum3.substring(pch+1, (pch+1)+dato);
                 }else{snum4=snum3.substring(pch, pch+dato);}
@@ -293,7 +315,10 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
                     num1=Long.parseLong(snum4);
               }         
            }
-           }        
+    }else{
+        //De no haber seleccioando ningun Radio Button
+ JOptionPane.showMessageDialog(null,"Debe indicar donde se colocara el 0","Aviso", JOptionPane.ERROR_MESSAGE);
+        }      
     }//GEN-LAST:event_BGenerarMouseClicked
     
             
@@ -311,9 +336,12 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
                 }
             } catch (Exception e) {
             }
+       
         Constante.setText("");
         Semillax0.setText("");
         Repeticiones.setText("");
+        CD.setSelected(false);
+        CI.setSelected(false);
     }//GEN-LAST:event_B2MouseClicked
 
     /**
@@ -361,6 +389,8 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B2;
     private javax.swing.JButton BGenerar;
+    private javax.swing.JRadioButton CD;
+    private javax.swing.JRadioButton CI;
     private javax.swing.JTextField Constante;
     private javax.swing.JTextField Repeticiones;
     private javax.swing.JTextField Semillax0;
