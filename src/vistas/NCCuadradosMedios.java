@@ -4,6 +4,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.Cuadrados;
 
+//@author Christian Hernandez
+
 public class NCCuadradosMedios extends javax.swing.JDialog {
     DefaultTableModel modelo;
     Cuadrados utilidades;

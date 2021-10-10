@@ -4,6 +4,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+//@author Christian Hernandez
+        
 public class Aditivo {
     //----------Metodos para el Algoritmo Aditivo-------------------------------    
     public static void algoritmoAditivo(int numeroSemillas, int semillasNuevas, 

@@ -4,6 +4,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.Aditivo;
 
+//@author Christian Hernandez
+        
 public class CAditivo extends javax.swing.JDialog {
     DefaultTableModel modelo;
     DefaultTableModel modelo2;

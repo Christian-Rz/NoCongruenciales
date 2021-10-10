@@ -2,6 +2,8 @@ package logica;
 
 import javax.swing.table.DefaultTableModel;
 
+//@author Christian Hernandez
+
 public class Cuadrados {
     
     //--------Metodos para el algoritmo de cuadrados medios---------------------
