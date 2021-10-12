@@ -62,7 +62,6 @@ public class NCProductosMedios extends javax.swing.JDialog {
 
         jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTable1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -121,15 +120,12 @@ public class NCProductosMedios extends javax.swing.JDialog {
         rbtnDer.setForeground(new java.awt.Color(255, 255, 255));
         rbtnDer.setText("Derecha");
 
-        txtSem1.setBackground(new java.awt.Color(255, 255, 255));
         txtSem1.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
         txtSem1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtRep.setBackground(new java.awt.Color(255, 255, 255));
         txtRep.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
         txtRep.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtSem2.setBackground(new java.awt.Color(255, 255, 255));
         txtSem2.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
         txtSem2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -159,19 +155,19 @@ public class NCProductosMedios extends javax.swing.JDialog {
                         .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel2))
+                                        .addComponent(jLabel2)
                                         .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txtSem1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(rbtnIzq)
                                         .addGap(18, 18, 18)
-                                        .addComponent(rbtnDer)))
+                                        .addComponent(rbtnDer))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtSem1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(54, 54, 54)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -195,14 +191,14 @@ public class NCProductosMedios extends javax.swing.JDialog {
                 .addComponent(jLabel4)
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
                     .addComponent(txtSem1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(txtSem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSem2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -257,13 +253,13 @@ public class NCProductosMedios extends javax.swing.JDialog {
             num1 = Long.parseLong(se);
             num2 = Long.parseLong(se1);
 
-            String[] fila = new String[6];
+            String[] fila = new String[7];
             for (i = 0; i < Integer.parseInt(re); i++) {
                 num3 = (long) (num1 * num2);
                 snum3 = Long.toString(num3);
                 dato2 = snum3.length();
                 pch = (dato2 - dato) / 2;
-                snum4 = snum3.substring(pch, pch + dato);
+                snum4 = snum3.substring(pch, (pch+1) + dato);
                 num4 = Double.parseDouble(snum4) / (Math.pow(10, dato));
                 snum = Long.toString(num1);
                 snum2 = Long.toString(num2);
@@ -273,6 +269,7 @@ public class NCProductosMedios extends javax.swing.JDialog {
                 fila[3] = snum3;
                 fila[4] = snum4;
                 fila[5] = Double.toString(num4);
+                fila[6] = snum2;
                 modelo.addRow(fila);
                 num1 = Long.parseLong(snum2);
                 num2 = Long.parseLong(snum4);
@@ -290,7 +287,7 @@ public class NCProductosMedios extends javax.swing.JDialog {
             direccionGroup.clearSelection();
             num1 = Long.parseLong(se);
             num2 = Long.parseLong(se1);
-            String[] fila = new String[6];
+            String[] fila = new String[7];
             if (dato % 2 == 0) {
                 for (i = 0; i < Integer.parseInt(re); i++) {
                     num3 = (long) (num1 * num2);
@@ -311,6 +308,7 @@ public class NCProductosMedios extends javax.swing.JDialog {
                     fila[3] = snum3;
                     fila[4] = snum4;
                     fila[5] = Double.toString(num4);
+                    fila[6] = snum2;
                     modelo.addRow(fila);
                     num1 = Long.parseLong(snum2);
                     num2 = Long.parseLong(snum4);
@@ -336,6 +334,7 @@ public class NCProductosMedios extends javax.swing.JDialog {
                     fila[3] = snum3;
                     fila[4] = snum4;
                     fila[5] = Double.toString(num4);
+                    fila[6] = snum2;
                     modelo.addRow(fila);
                     num1 = Long.parseLong(snum2);
                     num2 = Long.parseLong(snum4);
