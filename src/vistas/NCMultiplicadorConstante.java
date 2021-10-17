@@ -2,20 +2,20 @@ package vistas;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Valencia
  */
 public class NCMultiplicadorConstante extends javax.swing.JDialog {
-
-        DefaultTableModel modelo;
+    DefaultTableModel modelo;
     /**
      * Creates new form MultiplicadorConstante
      */
-        //Constructor
     public NCMultiplicadorConstante(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
         modelo = new DefaultTableModel();
         modelo.addColumn("Iteraccion");
         modelo.addColumn("Constante");
@@ -35,90 +35,86 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Constante = new javax.swing.JTextField();
         Repeticiones = new javax.swing.JTextField();
-        B2 = new javax.swing.JButton();
-        BGenerar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         Semillax0 = new javax.swing.JTextField();
+        BGenerar = new javax.swing.JButton();
+        B2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         T1 = new javax.swing.JTable();
-        CD = new javax.swing.JRadioButton();
         CI = new javax.swing.JRadioButton();
+        CD = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setResizable(false);
-        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setBackground(new java.awt.Color(40, 42, 54));
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
 
-        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 1, 40)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Multiplicador Constante");
 
-        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Repeticiones:");
+        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(184, 193, 236));
+        jLabel2.setText("Constante:");
 
-        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Constante:");
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(184, 193, 236));
+        jLabel3.setText("Repeticiones:");
 
         Constante.setBackground(new java.awt.Color(255, 255, 255));
-        Constante.setFont(new java.awt.Font("Cambria Math", 0, 18)); // NOI18N
-        Constante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Constante.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConstanteActionPerformed(evt);
+        Constante.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ConstanteKeyTyped(evt);
             }
         });
 
         Repeticiones.setBackground(new java.awt.Color(255, 255, 255));
-        Repeticiones.setFont(new java.awt.Font("Cambria Math", 0, 18)); // NOI18N
-        Repeticiones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Repeticiones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RepeticionesActionPerformed(evt);
+        Repeticiones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                RepeticionesKeyTyped(evt);
             }
         });
 
-        B2.setBackground(new java.awt.Color(0, 0, 0));
-        B2.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
-        B2.setForeground(new java.awt.Color(255, 255, 255));
-        B2.setText("Limpiar");
-        B2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
-        B2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                B2MouseClicked(evt);
+        jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(184, 193, 236));
+        jLabel4.setText("Semilla x0:");
+
+        Semillax0.setBackground(new java.awt.Color(255, 255, 255));
+        Semillax0.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Semillax0KeyTyped(evt);
             }
         });
 
         BGenerar.setBackground(new java.awt.Color(0, 0, 0));
-        BGenerar.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
+        BGenerar.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
         BGenerar.setForeground(new java.awt.Color(255, 255, 255));
         BGenerar.setText("Generar");
-        BGenerar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        BGenerar.setMaximumSize(new java.awt.Dimension(100, 50));
+        BGenerar.setMinimumSize(new java.awt.Dimension(100, 50));
+        BGenerar.setPreferredSize(new java.awt.Dimension(100, 50));
         BGenerar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BGenerarMouseClicked(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Semilla x0:");
-
-        Semillax0.setBackground(new java.awt.Color(255, 255, 255));
-        Semillax0.setFont(new java.awt.Font("Cambria Math", 0, 18)); // NOI18N
-        Semillax0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Semillax0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Semillax0ActionPerformed(evt);
+        B2.setBackground(new java.awt.Color(0, 0, 0));
+        B2.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
+        B2.setForeground(new java.awt.Color(255, 255, 255));
+        B2.setText("Limpiar");
+        B2.setMaximumSize(new java.awt.Dimension(100, 50));
+        B2.setMinimumSize(new java.awt.Dimension(100, 50));
+        B2.setPreferredSize(new java.awt.Dimension(100, 50));
+        B2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                B2MouseClicked(evt);
             }
         });
 
@@ -130,219 +126,254 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Iteraccion", "Constante", "Semilla Xi", "Semilla ^2", "Semilla Xi+1", "Pseudonumero"
+                "Iteracción", "Constante", "Semilla Xi", "Semilla^2", "Semilla Xi + 1", "Pseudonumero"
             }
         ));
         jScrollPane1.setViewportView(T1);
 
-        CD.setBackground(new java.awt.Color(40, 42, 54));
-        CD.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
-        CD.setForeground(new java.awt.Color(255, 255, 255));
-        CD.setText("Cero a la derecha");
-
         CI.setBackground(new java.awt.Color(40, 42, 54));
-        CI.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        grupo.add(CI);
+        CI.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
         CI.setForeground(new java.awt.Color(255, 255, 255));
         CI.setText("Cero a la izquierda");
+
+        CD.setBackground(new java.awt.Color(40, 42, 54));
+        grupo.add(CD);
+        CD.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
+        CD.setForeground(new java.awt.Color(255, 255, 255));
+        CD.setText("Cero a la derecha");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(BGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(53, 53, 53)
-                            .addComponent(CD)
-                            .addGap(18, 18, 18)
-                            .addComponent(CI))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(Constante, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(Semillax0, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(Repeticiones, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(34, 34, 34)
-                            .addComponent(jLabel1))))
-                .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Repeticiones, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(Constante, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(CI)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(CD, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(BGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Semillax0, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(58, 58, 58))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addGap(45, 45, 45)
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Constante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(Semillax0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(Constante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(Semillax0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
                     .addComponent(Repeticiones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CD)
-                            .addComponent(CI))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CI)
+                        .addComponent(CD)))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
 
-        getContentPane().add(jPanel1);
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ConstanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConstanteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ConstanteActionPerformed
-
-    private void RepeticionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepeticionesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RepeticionesActionPerformed
-
     private void BGenerarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BGenerarMouseClicked
-        //Declaracion de las variables
-        String se  = Semillax0.getText();
-        String re  = Repeticiones.getText();
-        String con = Constante.getText();
-        String snum,snum2,snum3, snum4;
-        int ciclo = Integer.parseInt(re);
-        int dato = se.length();
-        int dato2,i,pch;
-        long num1,num2,num3;
-        double num4;
-    
-            if(dato < 4){
+        boolean selecion1 = CI.isSelected();
+        boolean selecion2 = CD.isSelected();
+
+        if(Constante.getText().isEmpty() || Semillax0.getText().isEmpty()
+           || Repeticiones.getText().isEmpty() || (!selecion1 && !selecion2)){
+            JOptionPane.showMessageDialog(null,"Complete todos los campos");
+        }else{
+            //Declaracion de las variables
+            String se  = Semillax0.getText();
+            String re  = Repeticiones.getText();
+            String con = Constante.getText();
+            String snum,snum2,snum3, snum4;
+            int ciclo = Integer.parseInt(re);
+            int dato = se.length();
+            int dato2,i,pch;
+            long num1,num2,num3;
+            double num4;
+            
+            int temporal = Integer.parseInt(se);
+            temporal = Integer.toString(temporal).length();
+            
+            if(temporal < 4 || se.equals("1000") || se.equals("1100") || se.equals("1110")){
                 JOptionPane.showMessageDialog(null,"En la semilla debe iniciar un numero mayor de 3 cifras");
                 Semillax0.setText("");
-            }else
-            if(se.isEmpty() || re.isEmpty()){
-                JOptionPane.showMessageDialog(null,"No deje nungun campo vacio");
-                
-            } else
-            //Comienza la evaluacion si es cero a la izquierda
-          if(CI.isSelected()){
-              num1 = Long.parseLong(se);
-            num2 = Long.parseLong(con);
-            snum2 = con;
-          String [] fila = new String [6];
-            for(i=0;i<Integer.parseInt(re);i++)
-            {
-                num3 = (long)(num1 * num2);
-                snum3 = Long.toString(num3);
-                dato2 = snum3.length();
-                pch = (dato2-dato)/2;
-                snum4=snum3.substring(pch, pch+dato);
-                num4= Double.parseDouble(snum4)/(Math.pow(10, dato));
-               snum= Long.toString(num1);
-                    fila[0]=Integer.toString(i);
-                    fila[1]=snum2;
-                    fila[2]=snum;
-                    fila[3]=snum3;
-                    fila[4]=snum4;
-                    fila[5]=Double.toString(num4);
-                    modelo.addRow(fila);
-                    num1=Long.parseLong(snum4);
-            }
-            
-             //Comienza la evaluacion si es cero a la derecha
-    }else if(CD.isSelected()){
-    num1= Long.parseLong(se);
+            }else if(Integer.parseInt(con) > 0){
+                //Borramos los datos de las celdas
+                try {
+                    for (int n = T1.getRowCount() - 1; n >= 0;--n) {
+                         modelo.removeRow(n);
+                    }
+                } catch (Exception e) {
+                }
+
+                //Comienza la evaluacion si es cero a la izquierda
+                if(CI.isSelected()){
+                    num1 = Long.parseLong(se);
+                    num2 = Long.parseLong(con);
+                    snum2 = con;
+                    String [] fila = new String [6];
+                    for(i=0;i<Integer.parseInt(re);i++){
+                        num3 = (long)(num1 * num2);
+                        snum3 = Long.toString(num3);
+                        dato2 = snum3.length();
+                        pch = (dato2-dato)/2;
+                        snum4=snum3.substring(pch, pch+dato);
+                        num4= Double.parseDouble(snum4)/(Math.pow(10, dato));
+                        snum= Long.toString(num1);
+                        fila[0]=Integer.toString(i);
+                        fila[1]=snum2;
+                        fila[2]=snum;
+                        fila[3]=snum3;
+                        fila[4]=snum4;
+                        fila[5]=Double.toString(num4);
+                        modelo.addRow(fila);
+                        num1=Long.parseLong(snum4);
+                    }
+
+                //Comienza la evaluacion si es cero a la derecha
+                }else if(CD.isSelected()){
+                    num1= Long.parseLong(se);
                     num2= Long.parseLong(con);
                     snum2=con;
-                String [] fila= new String [6];
-                if(dato%2==0){   
-                    for(i=0;i<Integer.parseInt(re);i++){
-                        num3= (long)(num1*num2);
-                        snum3=Long.toString(num3);
-                        dato2=snum3.length();       
-                pch=(dato2-dato)/2;
-                if(dato%2!=0){snum4=snum3.substring(pch+1, (pch+1)+dato);
-                }else{snum4=snum3.substring(pch, pch+dato);}
-                     num4= Double.parseDouble(snum4)/(Math.pow(10, dato));
-                     snum= Long.toString(num1);
-                    fila[0]=Integer.toString(i);
-                    fila[1]=snum2;
-                    fila[2]=snum;
-                    fila[3]=snum3;
-                    fila[4]=snum4;
-                    fila[5]=Double.toString(num4);
-                    modelo.addRow(fila);
-                    num1=Long.parseLong(snum4);
+                    String [] fila= new String [6];
+
+                    if(dato%2==0){   
+                        for(i=0;i<Integer.parseInt(re);i++){
+                            num3= (long)(num1*num2);
+                            snum3=Long.toString(num3);
+                            dato2=snum3.length();       
+                            pch=(dato2-dato)/2;
+
+                            if(dato2%2!=0){
+                                snum4=snum3.substring(pch+1, (pch+1)+dato);
+                            }else{
+                                snum4=snum3.substring(pch, pch+dato);
+                            }
+                            num4= Double.parseDouble(snum4)/(Math.pow(10, dato));
+                            snum= Long.toString(num1);
+                            fila[0]=Integer.toString(i);
+                            fila[1]=snum2;
+                            fila[2]=snum;
+                            fila[3]=snum3;
+                            fila[4]=snum4;
+                            fila[5]=Double.toString(num4);
+                            modelo.addRow(fila);
+                            num1=Long.parseLong(snum4);
+                        }
+                    }if(dato%2!=0){
+                        for(i=0;i<Integer.parseInt(re);i++){
+                            num3 = (long)(num1*num2);
+                            snum3 = Long.toString(num3);
+                            dato2 = snum3.length();
+                            pch = (dato2-dato)/2;
+
+                            if(dato2%2==0){
+                                snum4 = snum3.substring(pch+1,+(pch+1)+dato);
+                            }else{
+                                snum4=snum3.substring(pch, pch + dato);
+                            } 
+                            num4 = Double.parseDouble(snum4)/(Math.pow(10, dato));
+                            snum= Long.toString(num1);
+                            fila[0]=Integer.toString(i);
+                            fila[1]=snum2;
+                            fila[2]=snum;
+                            fila[3]=snum3;
+                            fila[4]=snum4;
+                            fila[5]=Double.toString(num4);
+                            modelo.addRow(fila);
+                            num1=Long.parseLong(snum4);
+                        }         
                     }
-           }if (dato%2!=0) {
-               for(i=0;i<Integer.parseInt(re);i++){
-                 num3 = (long)(num1*num2);
-                 snum3 = Long.toString(num3);
-                 dato2 = snum3.length();
-                 pch = (dato2-dato)/2;
-                    if(dato%2==0){snum4 = snum3.substring(pch+1,+(pch+1)+dato);}
-                    else {snum4=snum3.substring(pch, pch + dato);}
-                    num4 = Double.parseDouble(snum4)/(Math.pow(10, dato));
-                    snum= Long.toString(num1);
-                    fila[0]=Integer.toString(i);
-                    fila[1]=snum2;
-                    fila[2]=snum;
-                    fila[3]=snum3;
-                    fila[4]=snum4;
-                    fila[5]=Double.toString(num4);
-                     modelo.addRow(fila);
-                    num1=Long.parseLong(snum4);
-              }         
-           }
-    }else{
-        //De no haber seleccioando ningun Radio Button
- JOptionPane.showMessageDialog(null,"Debe indicar donde se colocara el 0","Aviso", JOptionPane.ERROR_MESSAGE);
-        }      
+                }
+            }else{
+                JOptionPane.showMessageDialog(null,"Ingrese una constante mayor a 0");
+            }
+        }             
     }//GEN-LAST:event_BGenerarMouseClicked
-    
-            
-       
-    private void Semillax0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Semillax0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Semillax0ActionPerformed
 
     private void B2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B2MouseClicked
-      try {
-                int b = T1.getRowCount();
-                for (int n = b - 1; n >= 0;) {
-                    modelo.removeRow(n);
-                    n = n - 1;
-                }
-            } catch (Exception e) {
+        try {
+            int b = T1.getRowCount();
+            for (int n = b - 1; n >= 0;) {
+                modelo.removeRow(n);
+                n = n - 1;
             }
-       
+        } catch (Exception e) {
+        }
         Constante.setText("");
         Semillax0.setText("");
         Repeticiones.setText("");
-        CD.setSelected(false);
-        CI.setSelected(false);
+        grupo.clearSelection();
     }//GEN-LAST:event_B2MouseClicked
+
+    private void ConstanteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConstanteKeyTyped
+         //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_ConstanteKeyTyped
+
+    private void Semillax0KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Semillax0KeyTyped
+         //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Semillax0KeyTyped
+
+    private void RepeticionesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RepeticionesKeyTyped
+         //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_RepeticionesKeyTyped
 
     /**
      * @param args the command line arguments
@@ -395,6 +426,7 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
     private javax.swing.JTextField Repeticiones;
     private javax.swing.JTextField Semillax0;
     private javax.swing.JTable T1;
+    private javax.swing.ButtonGroup grupo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
