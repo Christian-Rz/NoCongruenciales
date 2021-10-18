@@ -266,7 +266,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void boton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton4MouseClicked
         //Creamos la ventana
-        NCMultiplicadorConstante vistaMC = new NCMultiplicadorConstante(this,true);
+        NCProductosConstantes vistaMC = new NCProductosConstantes(this,true);
         //La hacemos visible
         vistaMC.setVisible(true);
     }//GEN-LAST:event_boton4MouseClicked

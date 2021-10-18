@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vistas;
 
 import javax.swing.JOptionPane;
@@ -92,6 +87,30 @@ public class CMultiplicativo extends javax.swing.JDialog {
         jLabel5.setForeground(new java.awt.Color(184, 193, 236));
         jLabel5.setText("Valor de K:");
 
+        txtRI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRIKeyTyped(evt);
+            }
+        });
+
+        txtG.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtGKeyTyped(evt);
+            }
+        });
+
+        txtX.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtXKeyTyped(evt);
+            }
+        });
+
+        txtK.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtKKeyTyped(evt);
+            }
+        });
+
         btnTres.setBackground(new java.awt.Color(0, 0, 0));
         btnTres.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
         btnTres.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,12 +165,12 @@ public class CMultiplicativo extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 14, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 88, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -174,12 +193,9 @@ public class CMultiplicativo extends javax.swing.JDialog {
                                 .addGap(136, 136, 136)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(30, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtK, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                            .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtK, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -319,6 +335,38 @@ public class CMultiplicativo extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "Hubo dificultades en el programa", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void txtRIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRIKeyTyped
+       //Verificamos que solo haya escrito digitos
+       char caracter = evt.getKeyChar();
+       if(!Character.isDigit(caracter)){
+            evt.consume();
+       }
+    }//GEN-LAST:event_txtRIKeyTyped
+
+    private void txtXKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtXKeyTyped
+       //Verificamos que solo haya escrito digitos
+       char caracter = evt.getKeyChar();
+       if(!Character.isDigit(caracter)){
+            evt.consume();
+       }
+    }//GEN-LAST:event_txtXKeyTyped
+
+    private void txtKKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKKeyTyped
+        //Verificamos que solo haya escrito digitos
+       char caracter = evt.getKeyChar();
+       if(!Character.isDigit(caracter)){
+            evt.consume();
+       }
+    }//GEN-LAST:event_txtKKeyTyped
+
+    private void txtGKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGKeyTyped
+        //Verificamos que solo haya escrito digitos
+       char caracter = evt.getKeyChar();
+       if(!Character.isDigit(caracter)){
+            evt.consume();
+       }
+    }//GEN-LAST:event_txtGKeyTyped
 
     /**
      * @param args the command line arguments

@@ -7,12 +7,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Valencia
  */
-public class NCMultiplicadorConstante extends javax.swing.JDialog {
+public class NCProductosConstantes extends javax.swing.JDialog {
     DefaultTableModel modelo;
     /**
      * Creates new form MultiplicadorConstante
      */
-    public NCMultiplicadorConstante(java.awt.Frame parent, boolean modal) {
+    public NCProductosConstantes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
@@ -57,7 +57,7 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 1, 40)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Multiplicador Constante");
+        jLabel1.setText("Productos Constantes");
 
         jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(184, 193, 236));
@@ -392,20 +392,20 @@ public class NCMultiplicadorConstante extends javax.swing.JDialog {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(NCMultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(NCProductosConstantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(NCMultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(NCProductosConstantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(NCMultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(NCProductosConstantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(NCMultiplicadorConstante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(NCProductosConstantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the dialog */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                NCMultiplicadorConstante dialog = new NCMultiplicadorConstante(new javax.swing.JFrame(), true);
+//                NCProductosConstantes dialog = new NCProductosConstantes(new javax.swing.JFrame(), true);
 //                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 //                    @Override
 //                    public void windowClosing(java.awt.event.WindowEvent e) {

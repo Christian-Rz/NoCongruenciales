@@ -22,8 +22,7 @@ public class NCProductosMedios extends javax.swing.JDialog {
         modelo = new DefaultTableModel();
         modelo.addColumn("Iteraccion");
         modelo.addColumn("Semilla Xi0");
-        modelo.addColumn("Iteraccion");
-        modelo.addColumn("Semilla Xi1");
+        modelo.addColumn("Semilla Xi 1");
         modelo.addColumn("Semilla^2");
         modelo.addColumn("Semilla Xi+1");
         modelo.addColumn("Pseudonumero");
@@ -120,14 +119,32 @@ public class NCProductosMedios extends javax.swing.JDialog {
         rbtnDer.setForeground(new java.awt.Color(255, 255, 255));
         rbtnDer.setText("Derecha");
 
+        txtSem1.setBackground(new java.awt.Color(255, 255, 255));
         txtSem1.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
         txtSem1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtSem1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSem1KeyTyped(evt);
+            }
+        });
 
+        txtRep.setBackground(new java.awt.Color(255, 255, 255));
         txtRep.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
         txtRep.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtRep.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRepKeyTyped(evt);
+            }
+        });
 
+        txtSem2.setBackground(new java.awt.Color(255, 255, 255));
         txtSem2.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
         txtSem2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtSem2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSem2KeyTyped(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(184, 193, 236));
@@ -222,125 +239,126 @@ public class NCProductosMedios extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-        String se = txtSem1.getText();
-        String re = txtRep.getText();
-        String se1 = txtSem2.getText();
-        String snum, snum2, snum3, snum4;
-        int ciclo = Integer.parseInt(re);
-        int dato = se.length();
-        int dato2, i, pch;
-        long num1, num2, num3;
-        double num4;
+         if(txtSem1.getText().isEmpty() || txtSem2.getText().isEmpty() || txtRep.getText().isEmpty() || (!rbtnIzq.isSelected() && !rbtnDer.isSelected())){
+            JOptionPane.showMessageDialog(null,"Complete todos los campos");
+        }else{
+            String se= txtSem1.getText();
+            String re= txtRep.getText(); 
+            String se1= txtSem2.getText();
+            String snum, snum2, snum3,snum4;
+            int ciclo = Integer.parseInt(re);
+            int dato=se.length();
+            int dato2,i,pch;
+            long num1,num2,num3;
+            double num4; 
 
-        if (dato < 4) {
-            JOptionPane.showMessageDialog(null, "Debe indicar un numero mayor de 3 cifras.");
-        }
-        if (se.isEmpty() || re.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "no debe dejar ningun campo vacio.");
-        }
-        if (!rbtnIzq.isSelected() && !rbtnDer.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Seleccione en donde quiere el cero", "Falta el cero", HEIGHT);
-        } else if (rbtnIzq.isSelected()) {
-            try {
-                int b = jTable1.getRowCount();
-                for (int n = b - 1; n >= 0;) {
-                    modelo.removeRow(n);
-                    n = n - 1;
-                }
-            } catch (Exception e) {
-            }
-            direccionGroup.clearSelection();
-            num1 = Long.parseLong(se);
-            num2 = Long.parseLong(se1);
-
-            String[] fila = new String[7];
-            for (i = 0; i < Integer.parseInt(re); i++) {
-                num3 = (long) (num1 * num2);
-                snum3 = Long.toString(num3);
-                dato2 = snum3.length();
-                pch = (dato2 - dato) / 2;
-                snum4 = snum3.substring(pch, (pch+1) + dato);
-                num4 = Double.parseDouble(snum4) / (Math.pow(10, dato));
-                snum = Long.toString(num1);
-                snum2 = Long.toString(num2);
-                fila[0] = Integer.toString(i);
-                fila[1] = snum;
-                fila[2] = snum2;
-                fila[3] = snum3;
-                fila[4] = snum4;
-                fila[5] = Double.toString(num4);
-                fila[6] = snum2;
-                modelo.addRow(fila);
-                num1 = Long.parseLong(snum2);
-                num2 = Long.parseLong(snum4);
-
-            }
-        } else if (rbtnDer.isSelected()) {
-            try {
-                int b = jTable1.getRowCount();
-                for (int n = b - 1; n >= 0;) {
-                    modelo.removeRow(n);
-                    n = n - 1;
-                }
-            } catch (Exception e) {
-            }
-            direccionGroup.clearSelection();
-            num1 = Long.parseLong(se);
-            num2 = Long.parseLong(se1);
-            String[] fila = new String[7];
-            if (dato % 2 == 0) {
-                for (i = 0; i < Integer.parseInt(re); i++) {
-                    num3 = (long) (num1 * num2);
-                    snum3 = Long.toString(num3);
-                    dato2 = snum3.length();
-                    pch = (dato2 - dato) / 2;
-                    if (dato % 2 != 0) {
-                        snum4 = snum3.substring(pch + 1, (pch + 1) + dato);
-                    } else {
-                        snum4 = snum3.substring(pch, pch + dato);
+            long semilla1 = Integer.parseInt(txtSem1.getText());
+            int tem1 = (Long.toString(semilla1)).length();
+            long semilla2 = Integer.parseInt(txtSem2.getText());
+            int tem2 = (Long.toString(semilla2)).length();
+            
+            if(tem1 < 4 || tem2 < 4 || txtSem1.getText().equals("1000") || txtSem1.getText().equals("1100") || txtSem1.getText().equals("1110")
+            || txtSem2.getText().equals("1000") || txtSem2.getText().equals("1100") || txtSem2.getText().equals("1110")){
+                JOptionPane.showMessageDialog(null,"Las semillas deben ser mayor de 3 digitos");
+            }else{
+                 //Borramos los datos de las celdas
+                try {
+                    for (int n = jTable1.getRowCount() - 1; n >= 0;--n) {
+                        modelo.removeRow(n);
                     }
-                    num4 = Double.parseDouble(snum4) / (Math.pow(10, dato));
-                    snum = Long.toString(num1);
-                    snum2 = Long.toString(num2);
-                    fila[0] = Integer.toString(i);
-                    fila[1] = snum;
-                    fila[2] = snum2;
-                    fila[3] = snum3;
-                    fila[4] = snum4;
-                    fila[5] = Double.toString(num4);
-                    fila[6] = snum2;
-                    modelo.addRow(fila);
-                    num1 = Long.parseLong(snum2);
-                    num2 = Long.parseLong(snum4);
+                } catch (Exception e) {
                 }
-            }
-            if (dato % 2 != 0) {
-                for (i = 0; i < Integer.parseInt(re); i++) {
-                    num3 = (long) (num1 * num2);
-                    snum3 = Long.toString(num3);
-                    dato2 = snum3.length();
-                    pch = (dato2 - dato) / 2;
-                    if (dato % 2 == 0) {
-                        snum4 = snum3.substring(pch + 1, (pch + 1) + dato);
-                    } else {
-                        snum4 = snum3.substring(pch, pch + dato);
+                //Se mostrará el código para cuando se selecciona la Izquierda
+                if(rbtnIzq.isSelected()){
+                    num1= Long.parseLong(se);
+                    num2= Long.parseLong(se1);
+                    String [] fila= new String [6];
+                    for(i=0;i<Integer.parseInt(re);i++){
+                        num3= (long)(num1*num2);
+                        snum3=Long.toString(num3);
+                        dato2=snum3.length();
+                        pch=(dato2-dato)/2;
+                        snum4=snum3.substring(pch, pch+dato);
+                        num4= Double.parseDouble(snum4)/(Math.pow(10, dato));
+                        snum= Long.toString(num1);
+                        snum2=Long.toString(num2);
+                        fila[0]=Integer.toString(i);
+                        fila[1]=snum;
+                        fila[2]=snum2;
+                        fila[3]=snum3;
+                        fila[4]=snum4;
+                        fila[5]=Double.toString(num4);
+                        modelo.addRow(fila);
+                        num1=Long.parseLong(snum2);
+                        num2=Long.parseLong(snum4);
                     }
-                    num4 = Double.parseDouble(snum4) / (Math.pow(10, dato));
-                    snum = Long.toString(num1);
-                    snum2 = Long.toString(num2);
-                    fila[0] = Integer.toString(i);
-                    fila[1] = snum;
-                    fila[2] = snum2;
-                    fila[3] = snum3;
-                    fila[4] = snum4;
-                    fila[5] = Double.toString(num4);
-                    fila[6] = snum2;
-                    modelo.addRow(fila);
-                    num1 = Long.parseLong(snum2);
-                    num2 = Long.parseLong(snum4);
-                }
+                }else{
+                    //Se mostrará el código para cuando se selecciona la Izquierda
+                    num1= Long.parseLong(se);
+                    num2= Long.parseLong(se1);
+                    String [] fila= new String [6];
+                    
+                    if(dato%2==0){
+                        for(i=0;i<Integer.parseInt(re);i++){
+                            num3= (long)(num1*num2);
+
+                            snum3=Long.toString(num3);
+                            dato2=snum3.length();
+                            pch=(dato2-dato)/2;
+                            
+                            if(dato2%2!=0){
+                                snum4=snum3.substring(pch+1, (pch+1)+dato);
+                            }else {
+                                snum4=snum3.substring(pch, pch+dato);
+                            }
+                            
+                            num4= Double.parseDouble(snum4)/(Math.pow(10, dato));
+                            snum= Long.toString(num1);
+                            snum2=Long.toString(num2);
+                            fila[0]=Integer.toString(i);
+                            fila[1]=snum;
+                            fila[2]=snum2;
+                            fila[3]=snum3;
+                            fila[4]=snum4;
+                            fila[5]=Double.toString(num4);
+                            modelo.addRow(fila);
+                            
+                            num1=Long.parseLong(snum2);
+                            num2=Long.parseLong(snum4);
+                        } 
+                    }
+                    
+                    if(dato%2!=0){
+                        for(i=0;i<Integer.parseInt(re);i++){
+                            num3= (long)(num1*num2);
+                            snum3=Long.toString(num3);
+                            dato2=snum3.length();
+                            pch=(dato2-dato)/2;
+                            
+                            if(dato2%2==0){
+                                snum4=snum3.substring(pch+1, (pch+1)+dato);
+                            }else {
+                                snum4=snum3.substring(pch, pch+dato);
+                            }
+                            
+                            num4= Double.parseDouble(snum4)/(Math.pow(10, dato));
+                            snum= Long.toString(num1);
+                            snum2=Long.toString(num2);
+                            fila[0]=Integer.toString(i);
+                            fila[1]=snum;
+                            fila[2]=snum2;
+                            fila[3]=snum3;
+                            fila[4]=snum4;
+                            fila[5]=Double.toString(num4);
+                            modelo.addRow(fila);
+
+                            num1=Long.parseLong(snum2);
+                            num2=Long.parseLong(snum4);
+                        }
+                    }
+                }                    
             }
-        }
+        } 
     }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
@@ -357,6 +375,30 @@ public class NCProductosMedios extends javax.swing.JDialog {
         txtSem2.setText("");
         txtRep.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void txtSem1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSem1KeyTyped
+        //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSem1KeyTyped
+
+    private void txtSem2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSem2KeyTyped
+        //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSem2KeyTyped
+
+    private void txtRepKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRepKeyTyped
+        //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtRepKeyTyped
 
     /**
      * @param args the command line arguments
