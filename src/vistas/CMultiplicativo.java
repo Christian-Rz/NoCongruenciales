@@ -237,85 +237,104 @@ public class CMultiplicativo extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTresActionPerformed
-        long xi = Long.parseLong(txtX.getText());
-        int rep = Integer.parseInt(txtRI.getText());
-        int gg = Integer.parseInt(txtG.getText());
-        int kk = Integer.parseInt(txtK.getText());
-        long f, Xi0, Xi1;
-        int a, m, n, i;
-        double ps;
-        String x;
-        try {
-            int b1 = jTable1.getRowCount();
-                for (int n1 = b1 - 1; n1 >= 0;) {
-                    modelo.removeRow(n1);
-                    n1 = n1 - 1;
-                }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Hubo dificultades en el programa", "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
-        if (xi % 2 == 0) {
-            JOptionPane.showMessageDialog(null, "Este algoritmo solo acepta números impares");
-        } else {
-            a = 3 + (8 * kk); //Operador para el algoritmos
-            m = (int) (Math.pow(2, gg));
-            n = m / 4;
-            Xi0 = xi;
+        if(txtRI.getText().isEmpty() || txtX.getText().isEmpty() || txtK.getText().isEmpty() 
+        || txtG.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Complete todos los campos");
+        }else{
+            long xi = Long.parseLong(txtX.getText());
+            int rep = Integer.parseInt(txtRI.getText());
+            int gg = Integer.parseInt(txtG.getText());
+            int kk = Integer.parseInt(txtK.getText());
+            long f, Xi0, Xi1;
+            int a, m, n, i;
+            double ps;
+            String x;
+            
+            if(xi < 2 || rep < 2 || gg < 2 || kk < 2){
+                JOptionPane.showMessageDialog(null,"Los valores deben ser mayores a 1");
+            }else{
+                try {
+                    int b1 = jTable1.getRowCount();
+                    for (int n1 = b1 - 1; n1 >= 0;) {
+                        modelo.removeRow(n1);
+                        n1 = n1 - 1;
+                    }
+               }catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Hubo dificultades en el programa", "ERROR", JOptionPane.ERROR_MESSAGE);
+               }
+                if (xi % 2 == 0) {
+                   JOptionPane.showMessageDialog(null, "Este algoritmo solo acepta números impares");
+                }else {
+                    a = 3 + (8 * kk); //Operador para el algoritmos
+                    m = (int) (Math.pow(2, gg));
+                    n = m / 4;
+                    Xi0 = xi;
 
-            String fila[] = new String[4];
-            for (i = 1; i <= n && i <= rep; i++) {
-                f = (a * Xi0);
-                Xi1 = f % m;
-                x = Long.toString(Xi1);
-                ps = (Double.parseDouble(x)) / (m - 1);
-                fila[0] = Integer.toString(i);
-                fila[1] = Long.toString(Xi0);
-                fila[2] = Long.toString(Xi1);
-                fila[3] = Double.toString(ps);
-                modelo.addRow(fila);
-                Xi0 = Xi1;
-            }
+                    String fila[] = new String[4];
+                    for (i = 1; i <= n && i <= rep; i++) {
+                        f = (a * Xi0);
+                        Xi1 = f % m;
+                        x = Long.toString(Xi1);
+                        ps = (Double.parseDouble(x)) / (m - 1);
+                        fila[0] = Integer.toString(i);
+                        fila[1] = Long.toString(Xi0);
+                        fila[2] = Long.toString(Xi1);
+                        fila[3] = Double.toString(ps);
+                        modelo.addRow(fila);
+                        Xi0 = Xi1;
+                    }
+                }
+            }            
         }
     }//GEN-LAST:event_btnTresActionPerformed
 
     private void btnCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCincoActionPerformed
-        long xi = Long.parseLong(txtX.getText());
-        int rep = Integer.parseInt(txtRI.getText());
-        int gg = Integer.parseInt(txtG.getText());
-        int kk = Integer.parseInt(txtK.getText());
-        long f, Xi0, Xi1;
-        int a, m, n, i;
-        double ps;
-        String x;
-        try {
-             int b1 = jTable1.getRowCount();
-                for (int n1 = b1 - 1; n1 >= 0;) {
-                    modelo.removeRow(n1);
-                    n1 = n1 - 1;
+        if(txtRI.getText().isEmpty() || txtX.getText().isEmpty() || txtK.getText().isEmpty() 
+        || txtG.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Complete todos los campos");
+        }else{
+            long xi = Long.parseLong(txtX.getText());
+            int rep = Integer.parseInt(txtRI.getText());
+            int gg = Integer.parseInt(txtG.getText());
+            int kk = Integer.parseInt(txtK.getText());
+            long f, Xi0, Xi1;
+            int a, m, n, i;
+            double ps;
+            String x;
+            if(xi < 2 || rep < 2 || gg < 2 || kk < 2){
+                JOptionPane.showMessageDialog(null,"Los valores deben ser mayores a 1");
+            }else{
+                try {
+                    int b1 = jTable1.getRowCount();
+                    for (int n1 = b1 - 1; n1 >= 0;) {
+                        modelo.removeRow(n1);
+                        n1 = n1 - 1;
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Hubo dificultades en el programa", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Hubo dificultades en el programa", "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
-        if (xi % 2 == 0) {
-            JOptionPane.showMessageDialog(null, "Este algoritmo solo acepta números impares");
-        } else {
-            a = 5 + (8 * kk); //Operador para el algoritmos
-            m = (int) (Math.pow(2, gg));
-            n = m / 4;
-            Xi0 = xi;
+                if (xi % 2 == 0) {
+                    JOptionPane.showMessageDialog(null, "Este algoritmo solo acepta números impares");
+                }else {
+                    a = 5 + (8 * kk); //Operador para el algoritmos
+                    m = (int) (Math.pow(2, gg));
+                    n = m / 4;
+                    Xi0 = xi;
 
-            String fila[] = new String[4];
-            for (i = 1; i <= n && i <= rep; i++) {
-                f = (a * Xi0);
-                Xi1 = f % m;
-                x = Long.toString(Xi1);
-                ps = (Double.parseDouble(x)) / (m - 1);
-                fila[0] = Integer.toString(i);
-                fila[1] = Long.toString(Xi0);
-                fila[2] = Long.toString(Xi1);
-                fila[3] = Double.toString(ps);
-                modelo.addRow(fila);
-                Xi0 = Xi1;
+                    String fila[] = new String[4];
+                    for (i = 1; i <= n && i <= rep; i++) {
+                        f = (a * Xi0);
+                        Xi1 = f % m;
+                        x = Long.toString(Xi1);
+                        ps = (Double.parseDouble(x)) / (m - 1);
+                        fila[0] = Integer.toString(i);
+                        fila[1] = Long.toString(Xi0);
+                        fila[2] = Long.toString(Xi1);
+                        fila[3] = Double.toString(ps);
+                        modelo.addRow(fila);
+                        Xi0 = Xi1;
+                    }
+                }
             }
         }
     }//GEN-LAST:event_btnCincoActionPerformed
