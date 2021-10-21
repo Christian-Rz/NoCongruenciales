@@ -48,6 +48,8 @@ public class Yule extends javax.swing.JDialog {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        limite = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -58,10 +60,32 @@ public class Yule extends javax.swing.JDialog {
                 datoAActionPerformed(evt);
             }
         });
+        datoA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                datoAKeyTyped(evt);
+            }
+        });
+
+        datoC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                datoCKeyTyped(evt);
+            }
+        });
 
         datoB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 datoBActionPerformed(evt);
+            }
+        });
+        datoB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                datoBKeyTyped(evt);
+            }
+        });
+
+        datoD.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                datoDKeyTyped(evt);
             }
         });
 
@@ -105,6 +129,8 @@ public class Yule extends javax.swing.JDialog {
             }
         });
 
+        jLabel6.setText("Valor Limite Dado");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -130,17 +156,21 @@ public class Yule extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jLabel6))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(datoA, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel4))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(datoC, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                                         .addComponent(jLabel5)))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(datoD, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                                    .addComponent(datoB))))))
+                                    .addComponent(datoD, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                                    .addComponent(datoB)
+                                    .addComponent(limite))))))
                 .addGap(85, 85, 85))
         );
         jPanel1Layout.setVerticalGroup(
@@ -160,13 +190,17 @@ public class Yule extends javax.swing.JDialog {
                     .addComponent(datoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(datoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(limite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addComponent(jButton5)
                 .addGap(2, 2, 2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -193,6 +227,7 @@ public class Yule extends javax.swing.JDialog {
             datoB.setText("");
             datoC.setText("");
             datoD.setText("");
+            limite.setText("");
 
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Hubo dificultades en el programa","ERROR",JOptionPane.ERROR_MESSAGE);
@@ -203,7 +238,7 @@ public class Yule extends javax.swing.JDialog {
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
 
-        if(datoA.getText().isEmpty() || datoB.getText().isEmpty()|| datoC.getText().isEmpty()|| datoD.getText().isEmpty()){
+        if(datoA.getText().isEmpty() || datoB.getText().isEmpty()|| datoC.getText().isEmpty()|| datoD.getText().isEmpty()|limite.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Complete todos los campos");
 
         }else {
@@ -216,34 +251,46 @@ public class Yule extends javax.swing.JDialog {
             int tercerDato = Integer.parseInt(datoC.getText());
             int cuartoDato = Integer.parseInt(datoD.getText());
 
-            int ventajaMuestral = (primerDato * cuartoDato) / (tercerDato * segundoDato);
+            
 
             double primerDato2 = Double.parseDouble(datoA.getText());
             double segundoDato2 = Double.parseDouble(datoB.getText());
             double tercerDato2 = Double.parseDouble(datoC.getText());
             double cuartoDato2 = Double.parseDouble(datoD.getText());
+            double quintoDato2 = Double.parseDouble(limite.getText());
+            
+            
+            if(primerDato < 1 || segundoDato < 1 || tercerDato < 1 || cuartoDato < 1 || quintoDato2 < 1){
+                JOptionPane.showMessageDialog(null, "Ingresar valor mayor a 0");
+            }
+            else{
+                int ventajaMuestral = (primerDato * cuartoDato) / (tercerDato * segundoDato);
+                
+                
+                 double errorEstimado = Math.sqrt((1/primerDato2)+(1/segundoDato2)+(1/tercerDato2)+(1/cuartoDato2));
 
-            double errorEstimado = Math.sqrt((1/primerDato2)+(1/segundoDato2)+(1/tercerDato2)+(1/cuartoDato2));
+                double logaritmo = Math.log (errorEstimado);
 
-            double logaritmo = Math.log (errorEstimado);
+                double limpos =(logaritmo + quintoDato2 * errorEstimado );
+                double limneg =(logaritmo - quintoDato2 * errorEstimado );
+                double limites =(limpos - limneg );
 
-            double limpos =(logaritmo + 1.96 * errorEstimado );
-            double limneg =(logaritmo - 1.96 * errorEstimado );
-            double limite =(limpos - limneg );
+                double formula1 = ((primerDato2) * (cuartoDato2)-(segundoDato2) * (tercerDato2) );
+                double formula2 =((primerDato2) * (cuartoDato2)+(tercerDato2) * (segundoDato2));
 
-            double formula1 = ((primerDato2) * (cuartoDato2)-(segundoDato2) * (tercerDato2) );
-            double formula2 =((primerDato2) * (cuartoDato2)+(tercerDato2) * (segundoDato2));
+                double formula= (formula1/formula2);
 
-            double formula= (formula1/formula2);
+                String [] fila= new String [4];
+                fila[0] = Integer.toString(ventajaMuestral);
+                fila[1] = Double.toString(errorEstimado);
+                fila[2] = Double.toString(limites);
+                fila[3] = Double.toString(formula);
+                modelo.addRow(fila);
+                //fila[2] = Long.toString(semillaCuadrada);
+                //fila[3] = numerosCentrales;
+            }
 
-            String [] fila= new String [4];
-            fila[0] = Integer.toString(ventajaMuestral);
-            fila[1] = Double.toString(errorEstimado);
-            fila[2] = Double.toString(limite);
-            fila[3] = Double.toString(formula);
-            modelo.addRow(fila);
-            //fila[2] = Long.toString(semillaCuadrada);
-            //fila[3] = numerosCentrales;
+           
 
         }
 
@@ -252,6 +299,38 @@ public class Yule extends javax.swing.JDialog {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void datoAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_datoAKeyTyped
+          //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_datoAKeyTyped
+
+    private void datoCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_datoCKeyTyped
+       //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_datoCKeyTyped
+
+    private void datoBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_datoBKeyTyped
+        //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_datoBKeyTyped
+
+    private void datoDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_datoDKeyTyped
+       //Verificamos que solo haya escrito digitos
+        char caracter = evt.getKeyChar();
+        if(!Character.isDigit(caracter)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_datoDKeyTyped
 
     /**
      * @param args the command line arguments
@@ -307,8 +386,10 @@ public class Yule extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField limite;
     // End of variables declaration//GEN-END:variables
 }
