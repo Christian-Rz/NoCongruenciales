@@ -90,6 +90,7 @@ public class Yule extends javax.swing.JDialog {
         });
 
         jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 1, 40)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 255));
         jLabel1.setText("Prueba de Yule");
 
         jButton1.setText("Limpiar");
@@ -99,12 +100,16 @@ public class Yule extends javax.swing.JDialog {
             }
         });
 
+        jLabel2.setForeground(new java.awt.Color(0, 102, 255));
         jLabel2.setText("Inserta dato A");
 
+        jLabel3.setForeground(new java.awt.Color(0, 51, 255));
         jLabel3.setText("Inserta dato C");
 
+        jLabel4.setForeground(new java.awt.Color(51, 51, 255));
         jLabel4.setText("Inserta dato B");
 
+        jLabel5.setForeground(new java.awt.Color(0, 51, 255));
         jLabel5.setText("Inserta dato D");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -129,6 +134,7 @@ public class Yule extends javax.swing.JDialog {
             }
         });
 
+        jLabel6.setForeground(new java.awt.Color(0, 51, 255));
         jLabel6.setText("Valor Limite Dado");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
