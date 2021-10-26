@@ -87,24 +87,28 @@ public class CMultiplicativo extends javax.swing.JDialog {
         jLabel5.setForeground(new java.awt.Color(184, 193, 236));
         jLabel5.setText("Valor de K:");
 
+        txtRI.setBackground(new java.awt.Color(255, 255, 255));
         txtRI.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtRIKeyTyped(evt);
             }
         });
 
+        txtG.setBackground(new java.awt.Color(255, 255, 255));
         txtG.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtGKeyTyped(evt);
             }
         });
 
+        txtX.setBackground(new java.awt.Color(255, 255, 255));
         txtX.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtXKeyTyped(evt);
             }
         });
 
+        txtK.setBackground(new java.awt.Color(255, 255, 255));
         txtK.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtKKeyTyped(evt);
