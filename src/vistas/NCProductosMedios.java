@@ -80,7 +80,7 @@ public class NCProductosMedios extends javax.swing.JDialog {
         jScrollPane1.setViewportView(jTable1);
 
         btnGenerar.setBackground(new java.awt.Color(0, 0, 0));
-        btnGenerar.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
+        btnGenerar.setFont(new java.awt.Font("Cambria Math", 0, 16)); // NOI18N
         btnGenerar.setForeground(new java.awt.Color(255, 255, 255));
         btnGenerar.setText("Generar");
         btnGenerar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -94,7 +94,7 @@ public class NCProductosMedios extends javax.swing.JDialog {
         });
 
         btnLimpiar.setBackground(new java.awt.Color(0, 0, 0));
-        btnLimpiar.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
+        btnLimpiar.setFont(new java.awt.Font("Cambria Math", 0, 16)); // NOI18N
         btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiar.setText("Limpiar");
         btnLimpiar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));

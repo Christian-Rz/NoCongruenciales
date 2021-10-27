@@ -77,7 +77,7 @@ public class NCCuadradosMedios extends javax.swing.JDialog {
         });
 
         boton1.setBackground(new java.awt.Color(0, 0, 0));
-        boton1.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
+        boton1.setFont(new java.awt.Font("Cambria Math", 0, 16)); // NOI18N
         boton1.setForeground(new java.awt.Color(255, 255, 255));
         boton1.setText("Generar");
         boton1.setMaximumSize(new java.awt.Dimension(100, 50));
@@ -91,7 +91,7 @@ public class NCCuadradosMedios extends javax.swing.JDialog {
         });
 
         boton2.setBackground(new java.awt.Color(0, 0, 0));
-        boton2.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
+        boton2.setFont(new java.awt.Font("Cambria Math", 0, 16)); // NOI18N
         boton2.setForeground(new java.awt.Color(255, 255, 255));
         boton2.setText("Limpiar");
         boton2.setMaximumSize(new java.awt.Dimension(100, 50));
