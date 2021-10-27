@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.Aditivo;
 
-//@author Christian Hernandez
+//@author Equipo 3
         
 public class CAditivo extends javax.swing.JDialog {
     DefaultTableModel modelo;
@@ -71,7 +71,7 @@ public class CAditivo extends javax.swing.JDialog {
         label4.setText("Cuantas nuevas semillas desea generar");
 
         boton1.setBackground(new java.awt.Color(0, 0, 0));
-        boton1.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
+        boton1.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         boton1.setForeground(new java.awt.Color(255, 255, 255));
         boton1.setText("Generar");
         boton1.setMaximumSize(new java.awt.Dimension(100, 50));
@@ -84,7 +84,7 @@ public class CAditivo extends javax.swing.JDialog {
         });
 
         boton2.setBackground(new java.awt.Color(0, 0, 0));
-        boton2.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
+        boton2.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         boton2.setForeground(new java.awt.Color(255, 255, 255));
         boton2.setText("Limpiar");
         boton2.setMaximumSize(new java.awt.Dimension(100, 50));
@@ -189,14 +189,15 @@ public class CAditivo extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(label4)
-                            .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)

@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Arturo Campos
+ * @author Equipo 3
  */
 public class CMultiplicativo extends javax.swing.JDialog {
 
@@ -116,7 +116,7 @@ public class CMultiplicativo extends javax.swing.JDialog {
         });
 
         btnTres.setBackground(new java.awt.Color(0, 0, 0));
-        btnTres.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
+        btnTres.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         btnTres.setForeground(new java.awt.Color(255, 255, 255));
         btnTres.setText("3+8k");
         btnTres.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -130,7 +130,7 @@ public class CMultiplicativo extends javax.swing.JDialog {
         });
 
         btnCinco.setBackground(new java.awt.Color(0, 0, 0));
-        btnCinco.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
+        btnCinco.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         btnCinco.setForeground(new java.awt.Color(255, 255, 255));
         btnCinco.setText("5+8k");
         btnCinco.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -148,7 +148,7 @@ public class CMultiplicativo extends javax.swing.JDialog {
         jLabel6.setText("Seleccione la formula para el proceso ");
 
         btnLimpiar.setBackground(new java.awt.Color(0, 0, 0));
-        btnLimpiar.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
+        btnLimpiar.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiar.setText("Limpiar");
         btnLimpiar.setMaximumSize(new java.awt.Dimension(100, 50));

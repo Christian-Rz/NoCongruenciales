@@ -6,7 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import logica.TablaDistribuccion;
 /**
  *
- * @author Valencia
+ * @author Equipo 3
  */
 public class ChiCuadrada extends javax.swing.JDialog {
     DefaultTableModel modelo1;
@@ -152,7 +152,7 @@ public class ChiCuadrada extends javax.swing.JDialog {
                 RealizarActionPerformed(evt);
             }
         });
-        jPanel1.add(Realizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 514, 180, 40));
+        jPanel1.add(Realizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 450, 180, 40));
 
         hipotesis.setBackground(new java.awt.Color(255, 255, 255));
         hipotesis.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -160,13 +160,13 @@ public class ChiCuadrada extends javax.swing.JDialog {
         hipotesis.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(hipotesis, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 710, 30));
 
-        jTextField2.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        jTextField2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jTextField2.setText("SI");
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, -1, -1));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 470, -1, -1));
 
-        jTextField3.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        jTextField3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jTextField3.setText("NO");
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, -1));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, -1, -1));
 
         pregunta.setBackground(new java.awt.Color(255, 255, 255));
         pregunta.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -207,12 +207,12 @@ public class ChiCuadrada extends javax.swing.JDialog {
                 LimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(Limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 474, 90, 30));
+        jPanel1.add(Limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 450, 110, 40));
 
-        jLabel7.setFont(new java.awt.Font("Baskerville Old Face", 0, 36)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Baskerville Old Face", 0, 39)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Algoritmo de Chi ^2");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 590));
 

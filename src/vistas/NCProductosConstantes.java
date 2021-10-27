@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Valencia
+ * @author Equipo 3
  */
 public class NCProductosConstantes extends javax.swing.JDialog {
     DefaultTableModel modelo;
@@ -93,7 +93,7 @@ public class NCProductosConstantes extends javax.swing.JDialog {
         });
 
         BGenerar.setBackground(new java.awt.Color(0, 0, 0));
-        BGenerar.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
+        BGenerar.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         BGenerar.setForeground(new java.awt.Color(255, 255, 255));
         BGenerar.setText("Generar");
         BGenerar.setMaximumSize(new java.awt.Dimension(100, 50));
@@ -106,7 +106,7 @@ public class NCProductosConstantes extends javax.swing.JDialog {
         });
 
         B2.setBackground(new java.awt.Color(0, 0, 0));
-        B2.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
+        B2.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         B2.setForeground(new java.awt.Color(255, 255, 255));
         B2.setText("Limpiar");
         B2.setMaximumSize(new java.awt.Dimension(100, 50));

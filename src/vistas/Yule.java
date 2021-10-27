@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Mario Gomez
+ * @author Equipo 3
  */
 public class Yule extends javax.swing.JDialog {
     DefaultTableModel modelo;
@@ -98,7 +98,7 @@ public class Yule extends javax.swing.JDialog {
         jLabel1.setText("Prueba de Yule");
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Limpiar");
         jButton1.setMaximumSize(new java.awt.Dimension(100, 50));
@@ -111,19 +111,19 @@ public class Yule extends javax.swing.JDialog {
         });
 
         jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(184, 193, 236));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Inserta dato A");
 
         jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(184, 193, 236));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Inserta dato C");
 
         jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(184, 193, 236));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Inserta dato B");
 
         jLabel5.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(184, 193, 236));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Inserta dato D");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -137,7 +137,7 @@ public class Yule extends javax.swing.JDialog {
         jScrollPane2.setViewportView(jTable1);
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
-        jButton5.setFont(new java.awt.Font("Cambria Math", 0, 15)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Generar");
         jButton5.setMaximumSize(new java.awt.Dimension(100, 50));
@@ -155,7 +155,7 @@ public class Yule extends javax.swing.JDialog {
         });
 
         jLabel6.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(184, 193, 236));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Valor Limite Dado");
 
         limite.setBackground(new java.awt.Color(255, 255, 255));
