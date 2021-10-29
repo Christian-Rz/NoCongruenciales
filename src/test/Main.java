@@ -13,8 +13,7 @@ public class Main {
         String user = "sa";
         String pass = "1234";
 
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        try {Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String connectionBD = "jdbc:sqlserver://localhost;databaseName="
                     + bdName + ";user=" + user + "password=" + pass + ";";
             connection = DriverManager.getConnection(connectionBD);
