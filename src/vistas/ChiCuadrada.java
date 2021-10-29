@@ -8,6 +8,7 @@ import logica.TablaDistribuccion;
  *
  * @author Equipo 3
  */
+
 public class ChiCuadrada extends javax.swing.JDialog {
     DefaultTableModel modelo1;
     DefaultTableModel modelo2;
@@ -24,6 +25,10 @@ public class ChiCuadrada extends javax.swing.JDialog {
         this.setLocationRelativeTo(null);
         arreglo = tabla.tablaD(arreglo);
     }
+    
+   
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
