@@ -22,7 +22,7 @@ public class ChiCuadrada extends javax.swing.JDialog {
         Connection connection = null;
         String bdName = "Distribuccion";
         String user = "sa";
-        String pass = "1234";
+        String pass = "admin*10";
 
         try {Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String connectionBD = "jdbc:sqlserver://localhost;databaseName="
@@ -370,7 +370,7 @@ public class ChiCuadrada extends javax.swing.JDialog {
                 //consulta
                 try {
                     Statement stat = getConnection().createStatement();
-                    ResultSet res = stat.executeQuery("SELECT * FROM Distribuccion.dbo.Chi");
+                    ResultSet res = stat.executeQuery("SELECT * FROM Chi");
                     for(int i=0;i<v;i++){
                         res.next();
                         vp = res.getFloat(col-2);  
