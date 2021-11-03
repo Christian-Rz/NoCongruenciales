@@ -1,5 +1,8 @@
 package vistas;
 
+import javax.swing.JOptionPane;
+import static vistas.ChiCuadrada.getConnection;
+
 public class VistaPrincipal extends javax.swing.JFrame {
 
     public VistaPrincipal() {
@@ -278,8 +281,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_boton6ActionPerformed
 
     private void boton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton6MouseClicked
-        ChiCuadrada vistaChi = new ChiCuadrada(this,true);
-        vistaChi.setVisible(true);
+        if (getConnection() != null) {
+            JOptionPane.showMessageDialog(null, "Conexion exitosa a la Base de datos");
+            ChiCuadrada vistaChi = new ChiCuadrada(this,true);
+            vistaChi.setVisible(true);
+        }else {
+            JOptionPane.showMessageDialog(null, "Sin conexion a la Base de datos", "Error en la conexión", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_boton6MouseClicked
 
     private void boton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton5ActionPerformed

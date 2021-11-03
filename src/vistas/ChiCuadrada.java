@@ -1,12 +1,13 @@
 package vistas;
 
 import java.sql.Statement;
-import java.sql.SQLException;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
 import javax.swing.table.DefaultTableModel;
-import test.Main;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -16,12 +17,28 @@ public class ChiCuadrada extends javax.swing.JDialog {
 
     DefaultTableModel modelo1;
     DefaultTableModel modelo2;
-
     
-//    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//    String connectionURL ="jdbc:sqlserver://localhost:1433;databaseName=tabla;user=loginsql;password=123456;";
-//    Connection conex = DriverManager.getConnection(connectionURL);
+    public static Connection getConnection() {
+        Connection connection = null;
+        String bdName = "Distribuccion";
+        String user = "sa";
+        String pass = "1234";
 
+        try {Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            String connectionBD = "jdbc:sqlserver://localhost;databaseName="
+                    + bdName + ";user=" + user + ";password=" + pass + ";";
+            connection = DriverManager.getConnection(connectionBD);
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error" + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+        }
+        return connection;
+    }
+    
     /**
      * Creates new form ChiCuadrada
      */
@@ -30,6 +47,8 @@ public class ChiCuadrada extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(parent);
         this.setLocationRelativeTo(null);
+        x2Tabla.setEditable(false);
+        x2Cal.setEditable(false);
     }
 
     /**
@@ -227,152 +246,151 @@ public class ChiCuadrada extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RealizarActionPerformed
-if(pregunta.getText().isEmpty()  || MError.getSelectedItem().equals("Selecciona")){
+        if(pregunta.getText().isEmpty()  || MError.getSelectedItem().equals("Selecciona")){
             JOptionPane.showMessageDialog(null, "Complete todos los campos");
         }else{
+            Fo.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{""}));
+            Fe.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{""}));
             
-                int col=0, fil=0, v, margen, o, co2;
-                double mar, e;
-                double tc, tf, tt, tm, sumaf, sumac, sumatf, sumatc;        
+            int col=0, fil=0, v, margen, o, co2;
+            double mar, e;
+            double tc, tf, tt, tm, sumaf, sumac, sumatf, sumatc;        
+ 
+            DecimalFormat objFormato = new DecimalFormat("#.###");      
+            String t;
+            
+            
+            modelo1 = (DefaultTableModel) this.Fo.getModel();
+            modelo2 = (DefaultTableModel) this.Fe.getModel();           
+            
+            col = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero de columnas"));
+            fil = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero de fila"));
+                                            
+            v = (fil - 1) * (col - 1);              
 
-                DecimalFormat objFormato = new DecimalFormat("#.###");      
-                String t;
+            VRes.setText("v:" + v);
 
+            sumaf = 0;
+            sumac = 0;                  
+            co2 = col + 2;
+            int datos[] = new int[col];
+            String suc[] = new String[co2];
+            String datas1[] = new String[co2];           
+            String datas2[] = new String[co2];
+            double Frecu[] = new double[co2];
+            margen = MError.getSelectedIndex();
+            float margen2 = Float.parseFloat(MError.getItemAt(margen));
+            
+              
+            try {                  
 
-                modelo1 = (DefaultTableModel) this.Fo.getModel();
-                modelo2 = (DefaultTableModel) this.Fe.getModel();           
+                for (int i = 0; i < col; i++) {
+                    t = JOptionPane.showInputDialog(null, "Ingrese el nombre de la columna");
+                    modelo1.addColumn(t);
+                    modelo2.addColumn(t);
+                }
 
-                col = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero de columnas"));
-                fil = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero de fila"));
-                                             
-                v = (fil - 1) * (col - 1);              
-
-                VRes.setText("v:" + v);
-
+                sumatc = 0;
+                sumatf = 0;
                 sumaf = 0;
-                sumac = 0;                  
-                co2 = col + 2;
+                sumatc = 0;
+                 modelo1.addColumn("Total");
+                 modelo2.addColumn("Total");             
 
-                int datos[] = new int[col];
-                String suc[] = new String[co2];
-                String datas1[] = new String[co2];           
-                String datas2[] = new String[co2];
-                double Frecu[] = new double[co2];
-
-                margen = MError.getSelectedIndex();
-                float margen2 = Float.parseFloat(MError.getItemAt(margen));
-                System.out.println(margen2);
-                
-                try {                  
-
-                    for (int i = 0; i < col; i++) {
-                        t = JOptionPane.showInputDialog(null, "Ingrese el nombre de la columna");
-                        modelo1.addColumn(t);
-                        modelo2.addColumn(t);
-                    }
-
-                    sumatc = 0;
-                    sumatf = 0;
+                for (int i = 0; i < fil; i++) {
+                    t = JOptionPane.showInputDialog(null, "Ingrese el nombre de la fila");
+                    datas1[0] = t;
                     sumaf = 0;
+
+                    for (int j = 0; j < col; j++) {
+                        datos[j] = Integer.parseInt(JOptionPane.showInputDialog(null, "Escriba el valor de la celda"));
+                        datas1[j + 1] = Integer.toString(datos[j]);
+                        sumaf = sumaf + datos[j];               
+                    }
+                    sumatf = sumatf + sumaf;
+                    datas1[col + 1] = Double.toString(sumaf);
+                    modelo1.addRow(datas1);
+                }
+
+                for (int i = 1; i < Fo.getColumnCount(); i++) {
                     sumatc = 0;
-                    modelo1.addColumn("Total");
-                    modelo2.addColumn("Total");             
-
-                    for (int i = 0; i < fil; i++) {
-                        t = JOptionPane.showInputDialog(null, "Ingrese el nombre de la fila");
-                        datas1[0] = t;
-                        sumaf = 0;
-
-                        for (int j = 0; j < col; j++) {
-                            datos[j] = Integer.parseInt(JOptionPane.showInputDialog(null, "Escriba el valor de la celda"));
-                            datas1[j + 1] = Integer.toString(datos[j]);
-                            sumaf = sumaf + datos[j];               
-                        }
-                        sumatf = sumatf + sumaf;
-                        datas1[col + 1] = Double.toString(sumaf);
-                        modelo1.addRow(datas1);
+                    for (int j = 0; j < Fo.getRowCount(); j++) {
+                        sumac = Double.parseDouble((String) Fo.getValueAt(j, i));
+                        sumatc += sumac;
                     }
+                    suc[i] = Double.toString(sumatc);
+                }
 
-                    for (int i = 1; i < Fo.getColumnCount(); i++) {
-                        sumatc = 0;
-                        for (int j = 0; j < Fo.getRowCount(); j++) {
-                            sumac = Double.parseDouble((String) Fo.getValueAt(j, i));
-                            sumatc += sumac;
-                        }
-                        suc[i] = Double.toString(sumatc);
+                suc[0] = "Total";
+                modelo1.addRow(suc);
+                tt = Double.parseDouble((String) Fo.getValueAt(fil, col));
+                for (int i = 0; i < fil; i++) {
+
+                    sumaf = 0;
+                    tf = Double.parseDouble((String) Fo.getValueAt(i, col));
+                    datas2[0] = (String) Fo.getValueAt(i, 0);
+                    for (int j = 0; j < col; j++) {
+                        tc = Double.parseDouble((String) Fo.getValueAt(fil, j + 1));
+                        tm = tf * tc;
+                        Frecu[j] = tm / tt;
+                        datas2[j + 1] = Double.toString(Frecu[j]);
+                        sumaf = sumaf + Frecu[j];
                     }
+                    sumatf = sumatf + sumaf;
+                    datas2[col + 1] = Double.toString(sumaf);
+                    modelo2.addRow(datas2);
+                }
 
-                    suc[0] = "Total";
-                    modelo1.addRow(suc);
-                    tt = Double.parseDouble((String) Fo.getValueAt(fil, col));
-                    for (int i = 0; i < fil; i++) {
-
-                        sumaf = 0;
-                        tf = Double.parseDouble((String) Fo.getValueAt(i, col));
-                        datas2[0] = (String) Fo.getValueAt(i, 0);
-                        for (int j = 0; j < col; j++) {
-                            tc = Double.parseDouble((String) Fo.getValueAt(fil, j + 1));
-                            tm = tf * tc;
-                            Frecu[j] = tm / tt;
-                            datas2[j + 1] = Double.toString(Frecu[j]);
-                            sumaf = sumaf + Frecu[j];
-                        }
-                        sumatf = sumatf + sumaf;
-                        datas2[col + 1] = Double.toString(sumaf);
-                        modelo2.addRow(datas2);
+                for (int i = 1; i < Fe.getColumnCount(); i++) {
+                    sumatc = 0;
+                    for (int j = 0; j < Fe.getRowCount(); j++) {
+                        sumac = Double.parseDouble((String) Fe.getValueAt(j, i));
+                        sumatc += sumac;
                     }
+                    suc[i] = Double.toString(sumatc);
+                }
 
-                    for (int i = 1; i < Fe.getColumnCount(); i++) {
-                        sumatc = 0;
-                        for (int j = 0; j < Fe.getRowCount(); j++) {
-                            sumac = Double.parseDouble((String) Fe.getValueAt(j, i));
-                            sumatc += sumac;
-                        }
-                        suc[i] = Double.toString(sumatc);
+                suc[0] = "Total";
+                modelo2.addRow(suc);
+                double K = 0;
+
+                for (int i = 0; i < fil; i++) {
+                    for (int j = 0; j < col; j++) {
+                        o = Integer.parseInt((String) Fo.getValueAt(i, j + 1));
+                        e = Double.parseDouble((String) Fe.getValueAt(i, j + 1));
+                        K += Math.pow((o - e), 2) / e;
                     }
+                }
 
-                    suc[0] = "Total";
-                    modelo2.addRow(suc);
-                    double K = 0;
-
-                    for (int i = 0; i < fil; i++) {
-                        for (int j = 0; j < col; j++) {
-                            o = Integer.parseInt((String) Fo.getValueAt(i, j + 1));
-                            e = Double.parseDouble((String) Fe.getValueAt(i, j + 1));
-                            K += Math.pow((o - e), 2) / e;
-                        }
-                    }
-
-                    mar = K;
-                    String columnaa= Float.toString(margen2);
+                mar = K;
+                String columnaa= Float.toString(margen2);
                     
-                    float vp = 0;
-//                    int v1 = col - 1;
-                    //consulta
-                    try {
-                        Statement stat = Main.getConnection().createStatement();
-                        ResultSet res = stat.executeQuery("SELECT * FROM Distribuccion.dbo.Chi");
-                        for(int i=0;i<v;i++){
-                            res.next();
-                            vp = res.getFloat(col-2);  
-                        }
-                    } catch (SQLException ex) {
-                        System.out.println("Error de consulta " + ex);
+                float vp = 0;
+
+                //consulta
+                try {
+                    Statement stat = getConnection().createStatement();
+                    ResultSet res = stat.executeQuery("SELECT * FROM Distribuccion.dbo.Chi");
+                    for(int i=0;i<v;i++){
+                        res.next();
+                        vp = res.getFloat(col-2);  
                     }
+                } catch (SQLException ex) {
+                    System.out.println("Error de consulta " + ex);
+                }
                     
-                    x2Cal.setText("" + objFormato.format(mar));
-                    x2Tabla.setText("" + vp);
+                x2Cal.setText("" + objFormato.format(mar));
+                x2Tabla.setText("" + vp);
 
-                    if (Double.parseDouble(x2Cal.getText()) > Double.parseDouble(x2Tabla.getText())) {
-                        hipotesis.setText("En base a los resultados, la hipotesis nula ¿" + pregunta.getText() + "?\n no aplica o influye en los resultados");
-                    } else {
-                        hipotesis.setText("En base a los resultados, la hipotesis alternativa ¿" + pregunta.getText() + "?\n aplica o influye en los resultados");
-                    }
+                if (Double.parseDouble(x2Cal.getText()) > Double.parseDouble(x2Tabla.getText())) {
+                    hipotesis.setText("En base a los resultados, la hipotesis nula ¿" + pregunta.getText() + "?\n no aplica o influye en los resultados");
+                } else {
+                    hipotesis.setText("En base a los resultados, la hipotesis alternativa ¿" + pregunta.getText() + "?\n aplica o influye en los resultados");
+                }
 
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Ha habido un error en " + ex);              
-                }  
-            
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Ha habido un error en " + ex);              
+            }  
         }
     }//GEN-LAST:event_RealizarActionPerformed
 
