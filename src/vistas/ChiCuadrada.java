@@ -22,7 +22,7 @@ public class ChiCuadrada extends javax.swing.JDialog {
         Connection connection = null;
         String bdName = "Distribuccion";
         String user = "sa";
-        String pass = "admin*10";
+        String pass = "1234";
 
         try {Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String connectionBD = "jdbc:sqlserver://localhost;databaseName="
