@@ -15,7 +15,7 @@ public class Main {
 
         try {Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String connectionBD = "jdbc:sqlserver://localhost;databaseName="
-                    + bdName + ";user=" + user + "password=" + pass + ";";
+                    + bdName + ";user=" + user + ";password=" + pass + ";";
             connection = DriverManager.getConnection(connectionBD);
 
         } catch (ClassNotFoundException e) {

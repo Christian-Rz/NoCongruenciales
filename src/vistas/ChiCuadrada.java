@@ -1,9 +1,12 @@
 package vistas;
 
+import java.sql.Statement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
 import javax.swing.table.DefaultTableModel;
-import logica.TablaDistribuccion;
+import test.Main;
 
 /**
  *
@@ -13,9 +16,11 @@ public class ChiCuadrada extends javax.swing.JDialog {
 
     DefaultTableModel modelo1;
     DefaultTableModel modelo2;
-    TablaDistribuccion tabla;
 
-    Double arreglo[][] = new Double[66][30];
+    
+//    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//    String connectionURL ="jdbc:sqlserver://localhost:1433;databaseName=tabla;user=loginsql;password=123456;";
+//    Connection conex = DriverManager.getConnection(connectionURL);
 
     /**
      * Creates new form ChiCuadrada
@@ -25,7 +30,6 @@ public class ChiCuadrada extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(parent);
         this.setLocationRelativeTo(null);
-        arreglo = tabla.tablaD(arreglo);
     }
 
     /**
@@ -223,53 +227,43 @@ public class ChiCuadrada extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RealizarActionPerformed
-        if (pregunta.getText().isEmpty() || x2Tabla.getText().isEmpty() || x2Cal.getText().isEmpty() || MError.getSelectedItem().equals("Selecciona")) {
+if(pregunta.getText().isEmpty()  || MError.getSelectedItem().equals("Selecciona")){
             JOptionPane.showMessageDialog(null, "Complete todos los campos");
-        } else {
-            double temp1 = Double.parseDouble(x2Tabla.getText());
-            double temp2 = Double.parseDouble(x2Cal.getText());
-            if (temp1 < 1 || temp2 < 1) {
-                JOptionPane.showMessageDialog(null, "Ingrese un número mayor a 0");
-            } else {
-                int col = 0, fil = 0, v, margen, o, co2;
+        }else{
+            
+                int col=0, fil=0, v, margen, o, co2;
                 double mar, e;
-                double tc, tf, tt, tm, sumaf, sumac, sumatf, sumatc;
+                double tc, tf, tt, tm, sumaf, sumac, sumatf, sumatc;        
 
-                DecimalFormat objFormato = new DecimalFormat("#.###");
-                String t, colum, var;
+                DecimalFormat objFormato = new DecimalFormat("#.###");      
+                String t;
+
 
                 modelo1 = (DefaultTableModel) this.Fo.getModel();
-                modelo2 = (DefaultTableModel) this.Fe.getModel();
+                modelo2 = (DefaultTableModel) this.Fe.getModel();           
 
-                col = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero de columnas"));
+                col = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero de columnas"));
                 fil = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero de fila"));
-
-                v = (fil - 1) * (col - 1);
+                                             
+                v = (fil - 1) * (col - 1);              
 
                 VRes.setText("v:" + v);
 
                 sumaf = 0;
-                sumac = 0;
+                sumac = 0;                  
                 co2 = col + 2;
 
                 int datos[] = new int[col];
                 String suc[] = new String[co2];
-                String datas1[] = new String[co2];
+                String datas1[] = new String[co2];           
                 String datas2[] = new String[co2];
                 double Frecu[] = new double[co2];
 
                 margen = MError.getSelectedIndex();
-                colum = Valores[mar];
-                Statement stat = conex.createStatement();
-                ResultSet res = stat.executeQuery("select * from VP");
-                float vp = 0;
-                for (int i = 0; i < v; i++) {
-                    res.next();
-                    vp = res.getFloat(colum);
-
-                }
-
-                try {
+                float margen2 = Float.parseFloat(MError.getItemAt(margen));
+                System.out.println(margen2);
+                
+                try {                  
 
                     for (int i = 0; i < col; i++) {
                         t = JOptionPane.showInputDialog(null, "Ingrese el nombre de la columna");
@@ -282,7 +276,7 @@ public class ChiCuadrada extends javax.swing.JDialog {
                     sumaf = 0;
                     sumatc = 0;
                     modelo1.addColumn("Total");
-                    modelo2.addColumn("Total");
+                    modelo2.addColumn("Total");             
 
                     for (int i = 0; i < fil; i++) {
                         t = JOptionPane.showInputDialog(null, "Ingrese el nombre de la fila");
@@ -292,7 +286,7 @@ public class ChiCuadrada extends javax.swing.JDialog {
                         for (int j = 0; j < col; j++) {
                             datos[j] = Integer.parseInt(JOptionPane.showInputDialog(null, "Escriba el valor de la celda"));
                             datas1[j + 1] = Integer.toString(datos[j]);
-                            sumaf = sumaf + datos[j];
+                            sumaf = sumaf + datos[j];               
                         }
                         sumatf = sumatf + sumaf;
                         datas1[col + 1] = Double.toString(sumaf);
@@ -350,9 +344,24 @@ public class ChiCuadrada extends javax.swing.JDialog {
                     }
 
                     mar = K;
-
+                    String columnaa= Float.toString(margen2);
+                    
+                    float vp = 0;
+//                    int v1 = col - 1;
+                    //consulta
+                    try {
+                        Statement stat = Main.getConnection().createStatement();
+                        ResultSet res = stat.executeQuery("SELECT * FROM Distribuccion.dbo.Chi");
+                        for(int i=0;i<v;i++){
+                            res.next();
+                            vp = res.getFloat(col-2);  
+                        }
+                    } catch (SQLException ex) {
+                        System.out.println("Error de consulta " + ex);
+                    }
+                    
                     x2Cal.setText("" + objFormato.format(mar));
-                    x2Tabla.setText("" + arreglo[v][margen]);
+                    x2Tabla.setText("" + vp);
 
                     if (Double.parseDouble(x2Cal.getText()) > Double.parseDouble(x2Tabla.getText())) {
                         hipotesis.setText("En base a los resultados, la hipotesis nula ¿" + pregunta.getText() + "?\n no aplica o influye en los resultados");
@@ -361,9 +370,9 @@ public class ChiCuadrada extends javax.swing.JDialog {
                     }
 
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Ha habido un error en " + ex);
-                }
-            }
+                    JOptionPane.showMessageDialog(null, "Ha habido un error en " + ex);              
+                }  
+            
         }
     }//GEN-LAST:event_RealizarActionPerformed
 
