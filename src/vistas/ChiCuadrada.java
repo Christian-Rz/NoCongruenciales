@@ -280,6 +280,7 @@ public class ChiCuadrada extends javax.swing.JDialog {
             double Frecu[] = new double[co2];
             margen = MError.getSelectedIndex();
             float margen2 = Float.parseFloat(MError.getItemAt(margen));
+            System.out.println("Margen de error:" + margen2);
             
               
             try {                  
@@ -365,22 +366,23 @@ public class ChiCuadrada extends javax.swing.JDialog {
                 mar = K;
                 String columnaa= Float.toString(margen2);
                     
-                float vp = 0;
+                float vi = 0;
 
                 //consulta
                 try {
                     Statement stat = getConnection().createStatement();
-                    ResultSet res = stat.executeQuery("SELECT * FROM Chi");
-                    for(int i=0;i<v;i++){
+                    ResultSet res = stat.executeQuery("SELECT " +"[" +margen2+"]" +  " FROM Chi WHERE vp=" + v );
+                    
+//                    for(int i=0;i<v;i++){
                         res.next();
-                        vp = res.getFloat(col-2);  
-                    }
+                        vi = res.getFloat(1);  
+//                    }
                 } catch (SQLException ex) {
                     System.out.println("Error de consulta " + ex);
                 }
                     
                 x2Cal.setText("" + objFormato.format(mar));
-                x2Tabla.setText("" + vp);
+                x2Tabla.setText("" + vi);
 
                 if (Double.parseDouble(x2Cal.getText()) > Double.parseDouble(x2Tabla.getText())) {
                     hipotesis.setText("En base a los resultados, la hipotesis nula ¿" + pregunta.getText() + "?\n no aplica o influye en los resultados");
